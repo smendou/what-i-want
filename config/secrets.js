@@ -26,8 +26,8 @@ module.exports = {
   sessionSecret: process.env.SESSION_SECRET || 'Your Session Secret goes here',
 
   mailgun: {
-    user: process.env.MAILGUN_USER || 'postmaster@sandbox697fcddc09814c6b83718b9fd5d4e5dc.mailgun.org',
-    password: process.env.MAILGUN_PASSWORD || '29eldds1uri6'
+    user: process.env.MAILGUN_USER || 'postmaster@sandbox17fda5b7fd9b43a2b78fded570ae5e8a.mailgun.org',
+    password: process.env.MAILGUN_PASSWORD || 'd560e001ab57e397481f60f22f4d309e'
   },
   
   mandrill: {

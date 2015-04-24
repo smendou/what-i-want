@@ -1,9 +1,9 @@
 {
-  "name": "hackathon-starter",
-  "version": "3.0.2",
+  "name": "what-i-want",
+  "version": "1.0.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/sahat/hackathon-starter.git"
+    "url": "https://github.com/smendou/what-i-want"
   },
   "scripts": {
     "start": "node app.js",
