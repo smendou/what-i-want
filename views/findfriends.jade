@@ -14,8 +14,8 @@ block content
 				button.btn.btn-success(type='submit')
 					i.fa.fa-search
 					| Find!
-	div.col-sm-6.col-md-4
-		for friend in friends
+	for friend in friends
+		div.col-sm-6.col-md-4	
 			div.thumbnail
 				if friend.profile.picture
 					img(src='#{friend.profile.picture}')
