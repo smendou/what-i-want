@@ -14,6 +14,12 @@ block content
 				button.btn.btn-success(type='submit')
 					i.fa.fa-search
 					| Find!
-	ul
+	div.col-sm-6.col-md-4
 		for friend in friends
-			li #{friend.profile.name || friend.email || friend.id}
+			div.thumbnail
+				if friend.profile.picture
+					img(src='#{friend.profile.picture}')
+				else
+					img(src='#{friend.gravatar(200)}')
+				div.caption
+					h3 #{friend.profile.name || friend.email || friend.id}
