@@ -113,6 +113,8 @@ app.post('/account/delete', passportConf.isAuthenticated, userController.postDel
 app.get('/account/unlink/:provider', passportConf.isAuthenticated, userController.getOauthUnlink);
 
 app.get('/findfriends', passportConf.isAuthenticated, findFriendsController.index);
+app.post('/findfriends', passportConf.isAuthenticated, findFriendsController.postFindFriends);
+
 app.get('/wallofwants', passportConf.isAuthenticated, wallOfWantsController.index);
 app.get('/mywants', passportConf.isAuthenticated, myWantsController.index);
 
