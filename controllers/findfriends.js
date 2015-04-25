@@ -21,7 +21,7 @@ exports.index = function(req, res) {
  * Get friends liss.
  */
 exports.postFindFriends = function(req, res, next) {
-  User.find({profile.name : req.body.name}, function(err, users){
+  User.find({user.profile.name : req.body.name}, function(err, users){
     if(err){ return next(err); }
 
     res.render('findfriends', {
