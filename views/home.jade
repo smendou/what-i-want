@@ -5,12 +5,15 @@ block content
     h1 What I Want
     p.lead Let people know what you want.
     p.lead Find out what they want.
-    a.btn.btn-primary(href='/login/')
-      i.fa.fa-user
-      | Login
-    &nbsp;&nbsp;
-    a.btn.btn-success(href='/signup/')
-      i.fa.fa-user-plus
-      | Signup
+    if !user
+      a.btn.btn-primary(href='/login/')
+        i.fa.fa-user
+        | Login
+      &nbsp;&nbsp;
+      a.btn.btn-success(href='/signup/')
+        i.fa.fa-user-plus
+        | Signup
+    else
+      p.lead Hey #{user.profile.name || user.email || user.id}!
     p.lead 
       i.fa.fa-gift.huge
