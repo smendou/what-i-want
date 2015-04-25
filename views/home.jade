@@ -14,8 +14,7 @@ block content
         i.fa.fa-user-plus
         | Signup
     else
-      p.lead Hey #{user.profile.name || user.email || user.id}!
-       a.btn.btn-warning(href='/logout/')
+      a.btn.btn-warning(href='/logout/')
         i.fa.fa-sign-out
         | Logout
     p.lead 
