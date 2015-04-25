@@ -20,6 +20,6 @@ block content
 				if friend.profile.picture
 					img(src='#{friend.profile.picture}')
 				else
-					img(src='#{friend.gravatar(200)}')
+					img(src='#{friend.gravatar(100)}')
 				div.caption
 					h3 #{friend.profile.name || friend.email || friend.id}
