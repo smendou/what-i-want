@@ -11,7 +11,7 @@
         | What I Want
     .collapse.navbar-collapse
       ul.nav.navbar-nav
-        if user
+        if !user
           li(class=title=='Home'?'active':undefined)
             a(href='/') Home
           li(class=title=='Contact'?'active':undefined)
