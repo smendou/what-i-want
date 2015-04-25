@@ -1,5 +1,5 @@
 extends layout
 
 block content
-    h1 Find your friends
-    p.lead And find out what they want.
+    h1 #{user.profile.name || user.email || user.id}'s Wants
+    p.lead Manage your wants.
