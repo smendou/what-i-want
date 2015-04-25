@@ -111,6 +111,8 @@ app.post('/account/password', passportConf.isAuthenticated, userController.postU
 app.post('/account/delete', passportConf.isAuthenticated, userController.postDeleteAccount);
 app.get('/account/unlink/:provider', passportConf.isAuthenticated, userController.getOauthUnlink);
 
+app.get('/findfriends', passportConf.isAuthenticated, findFriendsController.index);
+
 /**
  * API examples routes.
  */
