@@ -1,5 +1,11 @@
 extends layout
 
 block content
-    h1 Find your friends
-    p.lead And find out what they want.
+	.page-header
+    	h3 Sign up
+  		form.form-horizontal(id='searchfriends-form', method='POST')
+    	input(type='hidden', name='_csrf', value=_csrf)
+    	.form-group
+      		label.col-sm-3.control-label(for='friend') Search for friend
+      		.col-sm-7
+        		input.form-control(name='email', id='email', placeholder='Friend', autofocus)
