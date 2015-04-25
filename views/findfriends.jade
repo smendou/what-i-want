@@ -22,4 +22,7 @@ block content
 				else
 					img(src='#{friend.gravatar(100)}')
 				div.caption
-					h5 #{friend.profile.name || friend.email || friend.id}
+					h4 #{friend.profile.name || friend.email || friend.id}
+				a.btn.btn-primary(href='/login/')
+					i.fa.fa-user-plus
+					| Add as a friend
