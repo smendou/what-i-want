@@ -29,7 +29,8 @@ var userController = require('./controllers/user');
 var apiController = require('./controllers/api');
 var contactController = require('./controllers/contact');
 var findFriendsController = require('./controllers/findfriends');
-
+var wallOfWantsController = require('./controllers/wallofwants');
+var myWantsController = require('./controllers/mywants');
 /**
  * API keys and Passport configuration.
  */
@@ -112,6 +113,8 @@ app.post('/account/delete', passportConf.isAuthenticated, userController.postDel
 app.get('/account/unlink/:provider', passportConf.isAuthenticated, userController.getOauthUnlink);
 
 app.get('/findfriends', passportConf.isAuthenticated, findFriendsController.index);
+app.get('/wallofwants', passportConf.isAuthenticated, wallOfWantsController.index);
+app.get('/mywants', passportConf.isAuthenticated, myWantsController.index);
 
 /**
  * API examples routes.
