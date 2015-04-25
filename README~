@@ -1,0 +1,3 @@
+git commit -am "project name"
+git push heroku master
+git push -u origin master
