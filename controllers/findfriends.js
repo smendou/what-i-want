@@ -19,6 +19,9 @@ exports.postFindFriends = function(req, res, next) {
   User.find(function(err, users){
     if(err){ return next(err); }
 
-    res.json(users);
+    res.render('findfriends', {
+	    title: 'Find Friends',
+	    friends : users
+	  });
   });
 };

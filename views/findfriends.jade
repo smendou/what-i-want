@@ -14,3 +14,6 @@ block content
 				button.btn.btn-success(type='submit')
 					i.fa.fa-search
 					| Find!
+	ul
+		for friend in friends
+			li #{friend.profile.name || friend.email || friend.id}
