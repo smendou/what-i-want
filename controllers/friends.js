@@ -67,7 +67,7 @@ exports.postSearch = function(req, res, next) {
 
     res.render('friends/search', {
 	    title: 'Friends',
-	    friends : users
+	    usrs : users
 	  });
   });
 };
