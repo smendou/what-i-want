@@ -1,17 +1,17 @@
 extends ../layout
 
 block content
-	.col-sm-8.col-sm-offset-2
-		form(method='POST')
-			legend Find friends
-			input(type='hidden', name='_csrf', value=_csrf)
+	.page-header
+		h3 find your friends
+	form(method='POST')
+		input(type='hidden', name='_csrf', value=_csrf)
+		.form-group
+			label.control-label(for='name') Name
+			input.form-control(type='text', name='name', id='name', placeholder='Your friend\'s name', autofocus=true)
 			.form-group
-				label.control-label(for='name') Name
-				input.form-control(type='text', name='name', id='name', placeholder='Your friend\'s name', autofocus=true)
-				.form-group
-					button.btn.btn-primary(type='submit')
-						i.fa.fa-search
-						| Search
+				button.btn.btn-primary(type='submit')
+					i.fa.fa-search
+					| Search
 	div.row
 		for usr in usrs
 			div.col-sm-4.col-md-2
@@ -22,6 +22,6 @@ block content
 						img(src='#{usr.gravatar(100)}')
 					div.caption
 						h4 #{usr.profile.name || usr.email || usr.id}
-					a.btn.btn-sucess(href='/findfriends/add/#{usr.id}')
+					a.btn.btn-success(href='/findfriends/add/#{usr.id}')
 						i.fa.fa-user-plus
 						| Add as a friend
