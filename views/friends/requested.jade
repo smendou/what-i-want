@@ -2,7 +2,7 @@ extends ../layout
 
 block content
 	.page-header
-		h3  They have'nt confirmed you yet
+		h3  They haven't confirmed you yet
 	div.row
 		for friend in friends
 			div.col-sm-4.col-md-2
@@ -14,6 +14,3 @@ block content
 					div.caption
 						h4 #{friend.friend.profile.name || friend.friend.email || friend.friend.id}
 					p #{friend.status}
-					a.btn.btn-primary(href='/findfriends/add/#{friend.friend.id}')
-						i.fa.fa-user-plus
-						| Add as a friend

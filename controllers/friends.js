@@ -51,13 +51,8 @@ exports.getPending = function(req, res, next) {
  * Friends page.
  */
 exports.getSearch = function(req, res, next) {
-  User.getPendingFriends(req.user._id, function (err, friends) {
-    if(err){ return next(err); }
-
-    res.render('friends/search', {
-      title: 'Friends',
-      friends : friends
-    });
+  res.render('friends/search', {
+    title: 'Friends'
   });
 };
 

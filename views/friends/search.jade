@@ -1,19 +1,27 @@
 extends ../layout
 
 block content
-	.page-header
-		h3  #{user.profile.name || user.email || user.id}'s friends
+	.col-sm-8.col-sm-offset-2
+		form(method='POST')
+			legend Find friends
+			input(type='hidden', name='_csrf', value=_csrf)
+			.form-group
+				label.control-label(for='name') Name
+				input.form-control(type='text', name='name', id='name', placeholder='Your friend\'s name', autofocus=true)
+				.form-group
+					button.btn.btn-primary(type='submit')
+					i.fa.fa-search
+					| Search
 	div.row
-		for friend in friends
+		for usr in usrs
 			div.col-sm-4.col-md-2
 				div.thumbnail
-					if friend.friend.profile.picture
-						img(src='#{friend.friend.profile.picture}')
+					if usr.profile.picture
+						img(src='#{usr.profile.picture}')
 					else
-						img(src='#{friend.friend.gravatar(100)}')
+						img(src='#{usr.gravatar(100)}')
 					div.caption
-						h4 #{friend.friend.profile.name || friend.friend.email || friend.friend.id}
-					p #{friend.status}
+						h4 #{usr.profile.name || usr.email || usr.id}
 					a.btn.btn-primary(href='/findfriends/add/#{friend.friend.id}')
 						i.fa.fa-user-plus
 						| Add as a friend
