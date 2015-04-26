@@ -52,7 +52,8 @@ exports.getPending = function(req, res, next) {
  */
 exports.getSearch = function(req, res, next) {
   res.render('friends/search', {
-    title: 'Friends'
+    title: 'Friends',
+    usrs : {}
   });
 };
 
