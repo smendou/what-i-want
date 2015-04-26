@@ -2,10 +2,6 @@ extends layout
 
 block content
 	.page-header
-		if user.profile.picture
-			img(src='#{user.profile.picture}')
-		else
-			img(src='#{user.gravatar(100)}')
 		h3  #{user.profile.name || user.email || user.id}'s friends
 	div.row
 		for friend in friends
