@@ -37,4 +37,12 @@ exports.postFindFriends = function(req, res, next) {
  */
 exports.addFriend = function(req, res, next) {
   User.requestFriend(req.user._id, req.params.friendid, next);
+  User.getFriends(user1, function (err, friendships) {
+    if(err){ return next(err); }
+
+    res.render('findfriends', {
+      title: 'Find Friends',
+      friends : friendships
+    });
+  });
 };
