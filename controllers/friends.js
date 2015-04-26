@@ -9,7 +9,7 @@ exports.getAccepted = function(req, res, next) {
   User.getAcceptedFriends(req.user._id, function (err, friends) {
     if(err){ return next(err); }
 
-    res.render('friends', {
+    res.render('friends/accepted', {
       title: 'Friends',
       friends : friends
     });
@@ -24,7 +24,7 @@ exports.getRequested = function(req, res, next) {
   User.getRequestedFriends(req.user._id, function (err, friends) {
     if(err){ return next(err); }
 
-    res.render('friends', {
+    res.render('friends/requested', {
       title: 'Friends',
       friends : friends
     });
@@ -39,7 +39,7 @@ exports.getPending = function(req, res, next) {
   User.getPendingFriends(req.user._id, function (err, friends) {
     if(err){ return next(err); }
 
-    res.render('friends', {
+    res.render('friends/pending', {
       title: 'Friends',
       friends : friends
     });
@@ -54,7 +54,7 @@ exports.getSearch = function(req, res, next) {
   User.getPendingFriends(req.user._id, function (err, friends) {
     if(err){ return next(err); }
 
-    res.render('friends', {
+    res.render('friends/search', {
       title: 'Friends',
       friends : friends
     });
@@ -69,7 +69,7 @@ exports.postSearch = function(req, res, next) {
   User.find({'profile.name' : req.body.name}, function(err, users){
     if(err){ return next(err); }
 
-    res.render('friends', {
+    res.render('friends/search', {
 	    title: 'Friends',
 	    friends : users
 	  });
