@@ -28,7 +28,7 @@ var homeController = require('./controllers/home');
 var userController = require('./controllers/user');
 var apiController = require('./controllers/api');
 var contactController = require('./controllers/contact');
-var findFriendsController = require('./controllers/findfriends');
+var friendsController = require('./controllers/friends');
 var wallOfWantsController = require('./controllers/wallofwants');
 var myWantsController = require('./controllers/mywants');
 /**
@@ -112,9 +112,9 @@ app.post('/account/password', passportConf.isAuthenticated, userController.postU
 app.post('/account/delete', passportConf.isAuthenticated, userController.postDeleteAccount);
 app.get('/account/unlink/:provider', passportConf.isAuthenticated, userController.getOauthUnlink);
 
-app.get('/findfriends', passportConf.isAuthenticated, findFriendsController.index);
-app.post('/findfriends', passportConf.isAuthenticated, findFriendsController.postFindFriends);
-app.get('/findfriends/add/:friendid', passportConf.isAuthenticated, findFriendsController.addFriend);
+app.get('/friends', passportConf.isAuthenticated, friendsController.index);
+app.post('/friends', passportConf.isAuthenticated, friendsController.postFindFriends);
+app.get('/friends/add/:friendid', passportConf.isAuthenticated, friendsController.addFriend);
 
 app.get('/wallofwants', passportConf.isAuthenticated, wallOfWantsController.index);
 app.get('/mywants', passportConf.isAuthenticated, myWantsController.index);
