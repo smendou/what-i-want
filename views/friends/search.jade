@@ -8,10 +8,9 @@ block content
 		.form-group
 			label.control-label(for='name') Name
 			input.form-control(type='text', name='name', id='name', placeholder='Your friend\'s name', autofocus=true)
-			.form-group
-				button.btn.btn-primary(type='submit')
-					i.fa.fa-search
-					| Search
+			button.btn.btn-primary(type='submit')
+				i.fa.fa-search
+				| Search
 	div.row
 		for usr in usrs
 			div.col-sm-4.col-md-2
