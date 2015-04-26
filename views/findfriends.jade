@@ -24,6 +24,6 @@ block content
 						img(src='#{friend.gravatar(100)}')
 					div.caption
 						h4 #{friend.profile.name || friend.email || friend.id}
-					a.btn.btn-primary(href='/addfriend/#{friend.id}')
+					a.btn.btn-primary(href='/findfriend/add/#{friend.id}')
 						i.fa.fa-user-plus
 						| Add as a friend

@@ -18,7 +18,7 @@ exports.index = function(req, res) {
 
 /**
  * POST /
- * Get friends liss.
+ * Get friends list.
  */
 exports.postFindFriends = function(req, res, next) {
   User.find({'profile.name' : req.body.name}, function(err, users){
@@ -29,4 +29,13 @@ exports.postFindFriends = function(req, res, next) {
 	    friends : users
 	  });
   });
+};
+
+/**
+ * POST /
+ * add friend.
+ */
+exports.addFriend = function(req, res, next) {
+  //User.requestFriend(user.id, req.id, callback);
+  res.json(user);
 };
