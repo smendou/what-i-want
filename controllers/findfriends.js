@@ -5,7 +5,7 @@ var User = mongoose.model('User');
  * GET /
  * Find Friends page.
  */
-exports.index = function(req, res) {
+exports.index = function(req, res, next) {
   User.find(function(err, users){
     if(err){ return next(err); }
 
@@ -36,6 +36,5 @@ exports.postFindFriends = function(req, res, next) {
  * add friend.
  */
 exports.addFriend = function(req, res, next) {
-  //User.requestFriend(user.id, req.id, callback);
-  res.json(req.user);
+  User.requestFriend(req.user._id, req.friendid, exports.index);
 };
