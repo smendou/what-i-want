@@ -6,13 +6,13 @@ var User = mongoose.model('User');
  * Find Friends page.
  */
 exports.index = function(req, res, next) {
-  User.find(function(err, users){
+  User.getFriends(req.user._id, function (err, friends) {
     if(err){ return next(err); }
 
     res.render('findfriends', {
-	    title: 'Find Friends',
-	    friends : users
-	  });
+      title: 'Find Friends',
+      friends : friends
+    });
   });
 };
 
