@@ -1,6 +1,7 @@
 var bcrypt = require('bcrypt-nodejs');
 var crypto = require('crypto');
 var mongoose = require('mongoose');
+var friends = require("mongoose-friends")
 
 var userSchema = new mongoose.Schema({
   email: { type: String, unique: true, lowercase: true },
@@ -25,6 +26,8 @@ var userSchema = new mongoose.Schema({
   resetPasswordToken: String,
   resetPasswordExpires: Date
 });
+
+userSchema.plugin(friends());
 
 /**
  * Password hash middleware.
