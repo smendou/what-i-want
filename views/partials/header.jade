@@ -17,8 +17,17 @@
           li(class=title=='Contact'?'active':undefined)
             a(href='/contact') Contact
         else
-          li(class=title=='Friends'?'active':undefined)
-            a(href='/friends') Friends
+          li.dropdown(class=title=='Friends'?'active':undefined)
+            a.dropdown-toggle(href='#', data-toggle='dropdown') Friends
+            ul.dropdown-menu
+              li
+                a(href='/friends/accepted') Accepted
+              li.divider
+              li
+                a(href='/friends/requested') Requested
+              li.divider
+              li
+                a(href='/friends/Pending') Pending
           li(class=title=='My Wants'?'active':undefined)
             a(href='/mywants') My Wants
           li(class=title=='Wall of Wants'?'active':undefined)
