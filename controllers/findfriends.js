@@ -37,5 +37,5 @@ exports.postFindFriends = function(req, res, next) {
  */
 exports.addFriend = function(req, res, next) {
   //User.requestFriend(user.id, req.id, callback);
-  res.json(user);
+  res.json(req.user);
 };
