@@ -2,7 +2,7 @@ extends layout
 
 block content
 	.page-header
-		if friend.friend.profile.picture
+		if user.profile.picture
 			img(src='#{user.profile.picture}')
 		else
 			img(src='#{user.gravatar(100)}')
