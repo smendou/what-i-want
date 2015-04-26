@@ -1,8 +1,8 @@
-extends layout
+extends ../layout
 
 block content
 	.page-header
-		h3  #{user.profile.name || user.email || user.id}'s friends
+		h3  They want to be your friend
 	div.row
 		for friend in friends
 			div.col-sm-4.col-md-2
@@ -13,7 +13,6 @@ block content
 						img(src='#{friend.friend.gravatar(100)}')
 					div.caption
 						h4 #{friend.friend.profile.name || friend.friend.email || friend.friend.id}
-					p #{friend.status}
 					a.btn.btn-primary(href='/findfriends/add/#{friend.friend.id}')
 						i.fa.fa-user-plus
-						| Add as a friend
+						| Accept

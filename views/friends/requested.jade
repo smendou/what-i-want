@@ -1,8 +1,8 @@
-extends layout
+extends ../layout
 
 block content
 	.page-header
-		h3  #{user.profile.name || user.email || user.id}'s friends
+		h3  They have'nt confirmed you yet
 	div.row
 		for friend in friends
 			div.col-sm-4.col-md-2
