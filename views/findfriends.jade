@@ -2,18 +2,11 @@ extends layout
 
 block content
 	.page-header
-		h3 Find Friends
-	form.form-horizontal(id='searchfriends-form', method='POST')
-		input(type='hidden', name='_csrf', value=_csrf)
-		.form-group
-			label.col-sm-3.control-label(for='friend') Name
-			.col-sm-7
-				input.form-control(name='name', id='name', placeholder='Name', autofocus)
-		.form-group
-			.col-sm-offset-3.col-sm-7
-				button.btn.btn-success(type='submit')
-					i.fa.fa-search
-					| Find!
+		if friend.friend.profile.picture
+			img(src='#{user.profile.picture}')
+		else
+			img(src='#{user.gravatar(100)}')
+		h3  #{user.profile.name || user.email || user.id}'s friends
 	div.row
 		for friend in friends
 			div.col-sm-4.col-md-2
