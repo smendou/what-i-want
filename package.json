@@ -36,6 +36,7 @@
     "lusca": "^1.0.3",
     "method-override": "^2.3.2",
     "mongoose": "^4.0.1",
+    "mongoose-friends": "^0.2.3",
     "morgan": "^1.5.2",
     "multer": "^0.1.8",
     "node-foursquare": "^0.3.0",
