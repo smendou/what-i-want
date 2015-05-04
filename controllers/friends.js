@@ -78,9 +78,11 @@ exports.postSearch = function(req, res, next) {
  */
 exports.addFriend = function(req, res, next) {
   User.requestFriend(req.user._id, req.params.friendid, function(err, friendships){
-    //res.json(friendships);
-    User.getFriends(req.user._id, function (err, friends) {
-      res.json(friends);
+    if(err){ return next(err); }
+
+    res.render('friends/requested', {
+      title: 'Friends',
+      friends : friends
     });
   });
 };
