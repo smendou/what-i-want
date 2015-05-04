@@ -65,9 +65,9 @@ exports.getSearch = function(req, res, next) {
           title: 'Friends',
           usrs : usrs
         });
-      };  
-    };
-  };
+      });  
+    });
+  });
 };
 
 /**
