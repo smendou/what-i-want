@@ -51,10 +51,23 @@ exports.getPending = function(req, res, next) {
  * Friends page.
  */
 exports.getSearch = function(req, res, next) {
-  res.render('friends/search', {
-    title: 'Friends',
-    usrs : {}
-  });
+  User.getPendingFriends(req.user._id, function (err, friends) {
+    var usrs = {};
+    if(err){ return next(err); }
+    usrs.pending = friends;
+    User.getRequestedFriends(req.user._id, function (err, friends) {
+      if(err){ return next(err); }
+      usrs.requested = friends;
+      User.getAcceptedFriends(req.user._id, function (err, friends) {
+        if(err){ return next(err); }
+        usrs.accepted = friends;
+        res.render('friends/search', {
+          title: 'Friends',
+          usrs : usrs
+        });
+      };  
+    };
+  };
 };
 
 /**
