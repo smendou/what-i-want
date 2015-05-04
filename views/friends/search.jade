@@ -31,25 +31,25 @@ block content
 		for usr in usrs.requested
 			div.col-sm-4.col-md-2
 				div.thumbnail
-					if usr.friends.profile.picture
-						img(src='#{usr.friends.profile.picture}')
+					if usr.friend.profile.picture
+						img(src='#{usr.friend.profile.picture}')
 					else
-						img(src='#{usr.friends.gravatar(100)}')
+						img(src='#{usr.friend.gravatar(100)}')
 					div.caption
-						h4 #{usr.friends.profile.name || usr.friends.email || usr.friends.id}
-					a.btn.btn-success(href='/friends/add/#{usr.friends.id}')
+						h4 #{usr.friend.profile.name || usr.friend.email || usr.friend.id}
+					a.btn.btn-success(href='/friends/add/#{usr.friend.id}')
 						i.fa.fa-user-plus
 						| Add as a friend
 	div.row
 		for usr in usrs.accepted
 			div.col-sm-4.col-md-2
 				div.thumbnail
-					if usr.friends.profile.picture
-						img(src='#{usr.friends.profile.picture}')
+					if usr.friend.profile.picture
+						img(src='#{usr.friend.profile.picture}')
 					else
-						img(src='#{usr.friends.gravatar(100)}')
+						img(src='#{usr.friend.gravatar(100)}')
 					div.caption
-						h4 #{usr.friends.profile.name || usr.friends.email || usr.friends.id}
-					a.btn.btn-success(href='/friends/add/#{usr.friends.id}')
+						h4 #{usr.friend.profile.name || usr.friend.email || usr.friend.id}
+					a.btn.btn-success(href='/friends/add/#{usr.friend.id}')
 						i.fa.fa-user-plus
 						| Add as a friend
