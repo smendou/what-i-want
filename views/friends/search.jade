@@ -14,7 +14,7 @@ block content
 				button.btn.btn.btn-primary(type='submit')
 					i.fa.fa-search
 					| Search
-	h4 Pending : 
+	h4 Pending : usrs.tojson()
 	.row
 		for usr in usrs.pending
 			.col-sm-4
