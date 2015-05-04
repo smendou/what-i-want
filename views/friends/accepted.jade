@@ -16,3 +16,11 @@ block content
 					a.btn.btn-primary(href='/findfriends/add/#{friend.friend.id}')
 						i.fa.fa-gift
 						| Browse Wants
+	.row
+		for friend in friends
+			.col-sm-4
+				a(href='/api/github', style='color: #fff')
+					.panel.panel-default(style='background-color: #000')
+						.panel-body
+							img(src='http://i.imgur.com/2AaBlpf.png', height=40)
+							|  GitHub
