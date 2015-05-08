@@ -9,13 +9,13 @@ exports.getSearch = function(req, res, next) {
   User.getPendingFriends(req.user._id, function (err, friends) {
     var usrs = {};
     if(err){ return next(err); }
-    usrs.pending = (_.isEmpty(friends))?null:friends;
+    usrs.pending = (isEmpty(friends))?null:friends;
     User.getRequestedFriends(req.user._id, function (err, friends) {
       if(err){ return next(err); }
-      usrs.requested = (_.isEmpty(friends))?null:friends;
+      usrs.requested = (isEmpty(friends))?null:friends;
       User.getAcceptedFriends(req.user._id, function (err, friends) {
         if(err){ return next(err); }
-        usrs.accepted = (_.isEmpty(friends))?null:friends;
+        usrs.accepted = (isEmpty(friends))?null:friends;
         res.render('friends', {
           title: 'Friends',
           usrs : usrs
@@ -51,4 +51,12 @@ exports.addFriend = function(req, res, next) {
     req.flash('success', { msg: 'Your request has been send to ' + req.user.email + '.' });
     res.redirect('../search');
   });
+};
+
+var isEmpty = function(obj) {
+    for(var prop in obj) {
+        if(obj.hasOwnProperty(prop))
+            return false;
+    }
+    return true;
 };
