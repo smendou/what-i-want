@@ -35,7 +35,7 @@ exports.postSearch = function(req, res, next) {
     if(err){ return next(err); }
 
     res.render('search', {
-	    title: 'Friends',
+	    title: 'Search',
 	    usrs : users
 	  });
   });

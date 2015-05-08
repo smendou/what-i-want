@@ -17,13 +17,13 @@
           li(class=title=='Contact'?'active':undefined)
             a(href='/contact') Contact
         else
-          li(class=title=='Friends'?'active':undefined)
+          li(class=title=='Search'?'active':undefined)
               form.navbar-form.navbar-left(action='/search', method='POST')
                 input(type='hidden', name='_csrf', value=_csrf)
                 .input-group.input-group-sm(style='max-width:360px')
                   input.form-control(type='text', name='search', id='search', placeholder='Search')
                   .input-group-btn
-                    button.btn.btn.btn-success(type='submit')
+                    button.btn.btn.btn-default(type='submit')
                       i.fa.fa-search
           li(class=title=='Friends'?'active':undefined)
             a(href='/friends') Friends
