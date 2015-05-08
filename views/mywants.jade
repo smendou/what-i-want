@@ -3,7 +3,7 @@ extends layout
 block content
 	.page-header
 		h3 Add a new want
-	form.form-horizontal(action='/mywants/#{user.id}', method='POST')
+	form.form-horizontal(action='/mywants/#{user._id}', method='POST')
 		input(type='hidden', name='_csrf', value=_csrf)
 		.form-group
 			label.col-sm-2.control-label(for='name') Name
@@ -18,3 +18,12 @@ block content
 				button.btn.btn.btn-primary(type='submit')
 					i.fa.fa-pencil
 					| Add want
+	.page-header
+		h3 #{user.profile.name || user.email || user._id}
+	.row
+		for want in user.wants
+			.col-sm-4.col-md-2
+				.thumbnail
+					img(src='#{usr.gravatar(70)}')
+					.caption
+						h5 #{want.name}

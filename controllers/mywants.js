@@ -4,8 +4,13 @@ var Want = require('../models/Want');
  * My Wants page.
  */
 exports.getMyWants = function(req, res, next) {
-  res.render('mywants', {
-    title: 'My Wants'
+  Want.find({}, function(err, wants){
+    if(err){ return next(err); }
+
+    res.render('mywants', {
+	    title: 'My Wants',
+	    wants : wants
+	  });
   });
 };
 
@@ -16,10 +21,13 @@ exports.getMyWants = function(req, res, next) {
 exports.postNewWant = function(req, res, next) {  
   var want = new Want({
     name: req.body.name,
-    url: req.body.url
+    url: req.body.url,
+    userid : req.userid
   });
+
   want.save(function(err) {
   	if (err) return next(err);
+  	req.user.wants.push(want);
   	exports.getMyWants(req, res, next);
   });
 };
