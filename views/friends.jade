@@ -2,18 +2,18 @@ extends layout
 
 block content
 	if usrs.pending
-		h6 Pending
+		h3 Pending
 		.row
 			for usr in usrs.pending
-				.col-sm-4
-					a(href='#',style='color: #fff')
-						.panel.panel-default(style='background-color: #2C3E50')
-							.panel-body
-								if usr.friend.profile.picture
-									img(src='#{usr.friend.profile.picture}')
-								else
-									img(src='#{usr.friend.gravatar(40)}')
-								| #{usr.friend.profile.name || usr.friend.email || usr.friend.id}
+				.col-sm-6.col-md-4
+					.thumbnail
+						if usr.friend.profile.picture
+							img(src='#{usr.friend.profile.picture}')
+						else
+							img(src='#{usr.friend.gravatar(40)}')
+						.caption
+							h6 #{usr.friend.profile.name || usr.friend.email || usr.friend.id}
+							a.btn.btn-primary(href='#')
 	if usrs.requested
 		h6 Requested
 		.row
