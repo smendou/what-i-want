@@ -5,8 +5,8 @@ block content
 	.row
 		for usr in usrs
 			.col-sm-4
-				a(href='/search/addfriend/#{usr.id}')
-					.panel.panel-default
+				a(href='/search/addfriend/#{usr.id}',style='color: #7b8a8b')
+					.panel.panel-default(style='background-color: #95a5a6')
 						.panel-body
 							if usr.profile.picture
 								img(src='#{usr.profile.picture}')
