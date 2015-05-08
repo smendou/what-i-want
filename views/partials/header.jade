@@ -10,7 +10,7 @@
         i.fa.fa-gift
         | What I Want
     .collapse.navbar-collapse
-      .navbar-form.navbar-left(action='/friends/search', method='POST')
+      form.navbar-form.navbar-left(action='/friends/search', method='POST')
         .input-group.input-group-sm(style='max-width:360px')
           input.form-control(type='text', name='name', id='name', placeholder='Your friend\'s name')
           .input-group-btn
