@@ -13,8 +13,9 @@
       .navbar-form.navbar-left
         .input-group.input-group-sm(style='max-width:360px')
           input.form-control(type='text', name='name', id='name', placeholder='Your friend\'s name')
-          button.btn.btn.btn-primary(type='submit')
-            i.fa.fa-search
+          .input-group-btn
+            button.btn.btn.btn-primary(type='submit')
+              i.fa.fa-search
       ul.nav.navbar-nav
         if !user
           li(class=title=='Home'?'active':undefined)
