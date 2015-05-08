@@ -11,7 +11,7 @@ block content
 						if usr.friend.profile.picture
 							img(src='#{usr.friend.profile.picture}')
 						else
-							img(src='#{usr.friend.gravatar(40)}')
+							img(src='#{usr.friend.gravatar(70)}')
 						.caption
 							h5 #{usr.friend.profile.name || usr.friend.email || usr.friend.id}
 							a.btn.btn-info(href='/search/addfriend/#{usr.friend.id}')
@@ -26,7 +26,7 @@ block content
 						if usr.friend.profile.picture
 							img(src='#{usr.friend.profile.picture}')
 						else
-							img(src='#{usr.friend.gravatar(40)}')
+							img(src='#{usr.friend.gravatar(70)}')
 						.caption
 							h5 #{usr.friend.profile.name || usr.friend.email || usr.friend.id}
 	if usrs.accepted
@@ -39,7 +39,7 @@ block content
 						if usr.friend.profile.picture
 							img(src='#{usr.friend.profile.picture}')
 						else
-							img(src='#{usr.friend.gravatar(40)}')
+							img(src='#{usr.friend.gravatar(70)}')
 						.caption
 							h5 #{usr.friend.profile.name || usr.friend.email || usr.friend.id}
 							a.btn.btn-primary(href='/search/addfriend/#{usr.friend.id}')

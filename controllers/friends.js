@@ -5,7 +5,7 @@ var User = mongoose.model('User');
  * GET /
  * Friends page.
  */
-exports.getSearch = function(req, res, next) {
+exports.getFriends = function(req, res, next) {
   User.getPendingFriends(req.user._id, function (err, friends) {
     var usrs = {};
     if(err){ return next(err); }
