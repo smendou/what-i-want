@@ -3,7 +3,7 @@ extends layout
 block content
 	if usrs.pending
 		.page-header
-    		h3 Pending requests
+			h3 Pending requests
 		.row
 			for usr in usrs.pending
 				.col-sm-4.col-md-2
@@ -18,7 +18,7 @@ block content
 								|Accept
 	if usrs.requested
 		.page-header
-    		h3 Requested friends
+			h3 Requested friends
 		.row
 			for usr in usrs.requested
 				.col-sm-4.col-md-2
@@ -31,7 +31,7 @@ block content
 							h5 #{usr.friend.profile.name || usr.friend.email || usr.friend.id}
 	if usrs.accepted
 		.page-header
-    		h3 Friends
+			h3 Friends
 		.row
 			for usr in usrs.accepted
 				.col-sm-4.col-md-2
