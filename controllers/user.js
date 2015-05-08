@@ -356,3 +356,15 @@ exports.postForgot = function(req, res, next) {
     res.redirect('/forgot');
   });
 };
+
+var getUser = function(req, res, next, id) {
+  var query = User.findById(id);
+
+  query.exec(function (err, user){
+    if (err) { return next(err); }
+    if (!user) { return next(new Error('can\'t find user')); }
+
+    req.user = user;
+    return next();
+  });
+};

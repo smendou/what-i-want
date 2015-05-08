@@ -22,7 +22,7 @@ exports.postNewWant = function(req, res, next) {
   var want = new Want({
     name: req.body.name,
     url: req.body.url,
-    userid : req.userid
+    user : req.user
   });
 
   want.save(function(err) {

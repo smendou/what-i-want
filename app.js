@@ -91,6 +91,8 @@ app.use(function(req, res, next) {
 });
 app.use(express.static(path.join(__dirname, 'public'), { maxAge: 31557600000 }));
 
+app.param('user', userController.getUser);
+
 /**
  * Primary app routes.
  */
@@ -119,7 +121,7 @@ app.get('/search/addfriend/:friendid', passportConf.isAuthenticated, friendsCont
 app.get('/wallofwants', passportConf.isAuthenticated, wallOfWantsController.index);
 
 app.get('/mywants', passportConf.isAuthenticated, myWantsController.getMyWants);
-app.post('/:userid/addWant', passportConf.isAuthenticated, myWantsController.postNewWant);
+app.post('/:user/addWant', passportConf.isAuthenticated, myWantsController.postNewWant);
 
 /**
  * API examples routes.
