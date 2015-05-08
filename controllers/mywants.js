@@ -3,7 +3,7 @@ var Want = require('../models/Want');
  * GET /
  * My Wants page.
  */
-exports.getMyWants = function(req, res) {
+exports.getMyWants = function(req, res, next) {
   res.render('mywants', {
     title: 'My Wants'
   });
@@ -20,8 +20,6 @@ exports.postNewWant = function(req, res, next) {
   });
   want.save(function(err) {
   	if (err) return next(err);
-  	res.render('mywants', {
-	   title: 'My Wants'
-	});
+  	exports.getMyWants(req, res, next);
   });
 };

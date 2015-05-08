@@ -2,8 +2,7 @@ var mongoose = require('mongoose');
 
 var wantSchema = new mongoose.Schema({
   name: String,
-  url: String,
-  users: [{ type: mongoose.Schema.Types.ObjectId, ref: 'User' }]
+  url: String
 });
 
 module.exports = mongoose.model('Want', wantSchema);

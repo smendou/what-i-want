@@ -23,6 +23,8 @@ var userSchema = new mongoose.Schema({
     picture: { type: String, default: '' }
   },
 
+  wants: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Want' }],
+
   resetPasswordToken: String,
   resetPasswordExpires: Date
 });

@@ -119,7 +119,7 @@ app.get('/search/addfriend/:friendid', passportConf.isAuthenticated, friendsCont
 app.get('/wallofwants', passportConf.isAuthenticated, wallOfWantsController.index);
 
 app.get('/mywants', passportConf.isAuthenticated, myWantsController.getMyWants);
-app.post('/mywants', passportConf.isAuthenticated, myWantsController.postNewWant);
+app.post('/:userid/addWant', passportConf.isAuthenticated, myWantsController.postNewWant);
 
 /**
  * API examples routes.
