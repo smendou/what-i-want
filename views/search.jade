@@ -7,7 +7,7 @@ block content
 				a(href='/friends/add/#{usr.id}')
 					.panel.panel-default
 						.panel-body
-							if usr.friend.profile.picture
+							if usr.profile.picture
 								img(src='#{usr.profile.picture}')
 							else
 								img(src='#{usr.gravatar(40)}')
