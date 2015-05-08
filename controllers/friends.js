@@ -49,7 +49,7 @@ exports.addFriend = function(req, res, next) {
   User.requestFriend(req.user._id, req.params.friendid, function(err, friendships){
     //res.json(friendships);
     req.flash('success', { msg: 'Your request has been send to ' + req.user.email + '.' });
-    res.redirect('../search');
+    res.redirect('friends');
   });
 };
 
