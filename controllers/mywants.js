@@ -28,7 +28,7 @@ exports.postNewWant = function(req, res, next) {
   want.save(function(err) {
   	if (err) return next(err);
   	req.user.wants.push(want);
-  	res.json(req);
+  	res.json(req.user.wants);
   	//res.redirect('../../mywants');
   });
 };
