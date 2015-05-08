@@ -4,11 +4,11 @@ block content
 	.row
 		for usr in usrs
 			.col-sm-4
-				a(href='/friends/add/#{usr.friend.id}')
+				a(href='/friends/add/#{usr.id}')
 					.panel.panel-default
 						.panel-body
 							if usr.friend.profile.picture
-								img(src='#{usr.friend.profile.picture}')
+								img(src='#{usr.profile.picture}')
 							else
-								img(src='#{usr.friend.gravatar(40)}')
-							| #{usr.friend.profile.name || usr.friend.email || usr.friend.id}
+								img(src='#{usr.gravatar(40)}')
+							| #{usr.profile.name || usr.email || usr.id}
