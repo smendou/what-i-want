@@ -1,0 +1,14 @@
+extends ../layout
+
+block content
+	.row
+		for usr in usrs
+			.col-sm-4
+				a(href='/friends/add/#{usr.friend.id}')
+					.panel.panel-default
+						.panel-body
+							if usr.friend.profile.picture
+								img(src='#{usr.friend.profile.picture}')
+							else
+								img(src='#{usr.friend.gravatar(40)}')
+							| #{usr.friend.profile.name || usr.friend.email || usr.friend.id}
