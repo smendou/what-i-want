@@ -357,7 +357,7 @@ exports.postForgot = function(req, res, next) {
   });
 };
 
-var getUser = function(req, res, next, id) {
+exports.getUser = function(req, res, next, id) {
   var query = User.findById(id);
 
   query.exec(function (err, user){
