@@ -9,14 +9,15 @@
       a.navbar-brand(href='/')
         i.fa.fa-gift
         | What I Want
-    .collapse.navbar-collapse
-      form.navbar-form.navbar-left(action='/friends/search', method='POST')
-        input(type='hidden', name='_csrf', value=_csrf)
-        .input-group.input-group-sm(style='max-width:360px')
-          input.form-control(type='text', name='name', id='name', placeholder='Your friend\'s name')
-          .input-group-btn
-            button.btn.btn.btn-default(type='submit')
-              i.fa.fa-search
+    if user
+      .collapse.navbar-collapse
+        form.navbar-form.navbar-left(action='/friends/search', method='POST')
+          input(type='hidden', name='_csrf', value=_csrf)
+          .input-group.input-group-sm(style='max-width:360px')
+            input.form-control(type='text', name='search', id='search', placeholder='Search')
+            .input-group-btn
+              button.btn.btn.btn-success(type='submit')
+                i.fa.fa-search
       ul.nav.navbar-nav
         if !user
           li(class=title=='Home'?'active':undefined)
@@ -24,20 +25,8 @@
           li(class=title=='Contact'?'active':undefined)
             a(href='/contact') Contact
         else
-          li.dropdown(class=title=='Friends'?'active':undefined)
-            a.dropdown-toggle(href='#', data-toggle='dropdown') Friends
-            ul.dropdown-menu
-              li
-                a(href='/friends/accepted') Accepted
-              li.divider
-              li
-                a(href='/friends/requested') Requested
-              li.divider
-              li
-                a(href='/friends/pending') Pending
-              li.divider
-              li
-                a(href='/friends/search') Search
+          li(class=title=='Friends'?'active':undefined)
+            a(href='/friends') Friends
           li(class=title=='My Wants'?'active':undefined)
             a(href='/mywants') My Wants
           li(class=title=='Wall of Wants'?'active':undefined)

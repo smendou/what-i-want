@@ -112,11 +112,8 @@ app.post('/account/password', passportConf.isAuthenticated, userController.postU
 app.post('/account/delete', passportConf.isAuthenticated, userController.postDeleteAccount);
 app.get('/account/unlink/:provider', passportConf.isAuthenticated, userController.getOauthUnlink);
 
-app.get('/friends/accepted', passportConf.isAuthenticated, friendsController.getAccepted);
-app.get('/friends/requested', passportConf.isAuthenticated, friendsController.getRequested);
-app.get('/friends/pending', passportConf.isAuthenticated, friendsController.getPending);
-app.get('/friends/search', passportConf.isAuthenticated, friendsController.getSearch);
-app.post('/friends/search', passportConf.isAuthenticated, friendsController.postSearch);
+app.get('/friends', passportConf.isAuthenticated, friendsController.getSearch);
+app.post('/search', passportConf.isAuthenticated, friendsController.postSearch);
 app.get('/friends/add/:friendid', passportConf.isAuthenticated, friendsController.addFriend);
 
 app.get('/wallofwants', passportConf.isAuthenticated, wallOfWantsController.index);
