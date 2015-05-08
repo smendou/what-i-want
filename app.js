@@ -112,7 +112,7 @@ app.post('/account/password', passportConf.isAuthenticated, userController.postU
 app.post('/account/delete', passportConf.isAuthenticated, userController.postDeleteAccount);
 app.get('/account/unlink/:provider', passportConf.isAuthenticated, userController.getOauthUnlink);
 
-app.get('/friends', passportConf.isAuthenticated, friendsController.getFriend);
+app.get('/friends', passportConf.isAuthenticated, friendsController.getFriends);
 app.post('/search', passportConf.isAuthenticated, friendsController.postSearch);
 app.get('/search/addfriend/:friendid', passportConf.isAuthenticated, friendsController.addFriend);
 
