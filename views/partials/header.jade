@@ -11,6 +11,7 @@
         | What I Want
     .collapse.navbar-collapse
       form.navbar-form.navbar-left(action='/friends/search', method='POST')
+        input(type='hidden', name='_csrf', value=_csrf)
         .input-group.input-group-sm(style='max-width:360px')
           input.form-control(type='text', name='name', id='name', placeholder='Your friend\'s name')
           .input-group-btn
