@@ -47,8 +47,6 @@ exports.postSearch = function(req, res, next) {
  */
 exports.addFriend = function(req, res, next) {
   User.requestFriend(req.user._id, req.params.friendid, function(err, friendships){
-    //res.json(friendships);
-    req.flash('success', { msg: 'Your request has been send.' });
     res.redirect('../../friends');
   });
 };

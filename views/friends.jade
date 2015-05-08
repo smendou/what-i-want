@@ -5,7 +5,7 @@ block content
 		h3 Pending
 		.row
 			for usr in usrs.pending
-				.col-sm-6.col-md-4
+				.col-sm-4.col-md-2
 					.thumbnail
 						if usr.friend.profile.picture
 							img(src='#{usr.friend.profile.picture}')
@@ -16,10 +16,10 @@ block content
 							a.btn.btn-info(href='/search/addfriend/#{usr.friend.id}')
 								|Accept
 	if usrs.requested
-		h6 Requested
+		h3 Requested
 		.row
 			for usr in usrs.requested
-				.col-sm-6.col-md-4
+				.col-sm-4.col-md-2
 					.thumbnail
 						if usr.friend.profile.picture
 							img(src='#{usr.friend.profile.picture}')
@@ -28,10 +28,10 @@ block content
 						.caption
 							h5 #{usr.friend.profile.name || usr.friend.email || usr.friend.id}
 	if usrs.accepted
-		h6 Accepted
+		h3 Accepted
 		.row
 			for usr in usrs.accepted
-				.col-sm-6.col-md-4
+				.col-sm-4.col-md-2
 					.thumbnail
 						if usr.friend.profile.picture
 							img(src='#{usr.friend.profile.picture}')

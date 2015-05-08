@@ -1,15 +1,16 @@
 extends layout
 
 block content
-	h6 People
-	.row
-		for usr in usrs
-			.col-sm-4
-				a(href='/search/addfriend/#{usr.id}',style='color: #fff')
-					.panel.panel-default(style='background-color: #2C3E50')
-						.panel-body
-							if usr.profile.picture
-								img(src='#{usr.profile.picture}')
-							else
-								img(src='#{usr.gravatar(40)}')
-							| #{usr.profile.name || usr.email || usr.id}
+	h3 People
+		.row
+			for usr in usrs
+				.col-sm-4.col-md-2
+					.thumbnail
+						if usr.profile.picture
+							img(src='#{usr.profile.picture}')
+						else
+							img(src='#{usr.gravatar(40)}')
+						.caption
+							h5 #{usr.profile.name || usr.email || usr.id}
+							a.btn.btn-primary(href='/search/addfriend/#{usr.id}')
+								|Request
