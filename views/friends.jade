@@ -12,32 +12,32 @@ block content
 						else
 							img(src='#{usr.friend.gravatar(40)}')
 						.caption
-							h6 #{usr.friend.profile.name || usr.friend.email || usr.friend.id}
-							a.btn.btn-primary(href='#')
+							h5 #{usr.friend.profile.name || usr.friend.email || usr.friend.id}
+							a.btn.btn-info(href='/search/addfriend/#{usr.friend.id}')
 								|Accept
 	if usrs.requested
 		h6 Requested
 		.row
 			for usr in usrs.requested
-				.col-sm-4
-					a(href='#',style='color: #fff')
-						.panel.panel-default(style='background-color: #2C3E50')
-							.panel-body
-								if usr.friend.profile.picture
-									img(src='#{usr.friend.profile.picture}')
-								else
-									img(src='#{usr.friend.gravatar(40)}')
-								| #{usr.friend.profile.name || usr.friend.email || usr.friend.id}
+				.col-sm-6.col-md-4
+					.thumbnail
+						if usr.friend.profile.picture
+							img(src='#{usr.friend.profile.picture}')
+						else
+							img(src='#{usr.friend.gravatar(40)}')
+						.caption
+							h5 #{usr.friend.profile.name || usr.friend.email || usr.friend.id}
 	if usrs.accepted
 		h6 Accepted
 		.row
 			for usr in usrs.accepted
-				.col-sm-4
-					a(href='#',style='color: #fff')
-						.panel.panel-default(style='background-color: #2C3E50')
-							.panel-body
-								if usr.friend.profile.picture
-									img(src='#{usr.friend.profile.picture}')
-								else
-									img(src='#{usr.friend.gravatar(40)}')
-								| #{usr.friend.profile.name || usr.friend.email || usr.friend.id}
+				.col-sm-6.col-md-4
+					.thumbnail
+						if usr.friend.profile.picture
+							img(src='#{usr.friend.profile.picture}')
+						else
+							img(src='#{usr.friend.gravatar(40)}')
+						.caption
+							h5 #{usr.friend.profile.name || usr.friend.email || usr.friend.id}
+							a.btn.btn-primary(href='/search/addfriend/#{usr.friend.id}')
+								|Wants
