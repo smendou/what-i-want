@@ -2,7 +2,8 @@ extends layout
 
 block content
 	if usrs.pending
-		h3 Pending
+		.page-header
+    		h3 Pending requests
 		.row
 			for usr in usrs.pending
 				.col-sm-4.col-md-2
@@ -16,7 +17,8 @@ block content
 							a.btn.btn-info(href='/search/addfriend/#{usr.friend.id}')
 								|Accept
 	if usrs.requested
-		h3 Requested
+		.page-header
+    		h3 Requested friends
 		.row
 			for usr in usrs.requested
 				.col-sm-4.col-md-2
@@ -28,7 +30,8 @@ block content
 						.caption
 							h5 #{usr.friend.profile.name || usr.friend.email || usr.friend.id}
 	if usrs.accepted
-		h3 Accepted
+		.page-header
+    		h3 Friends
 		.row
 			for usr in usrs.accepted
 				.col-sm-4.col-md-2
