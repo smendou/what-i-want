@@ -9,8 +9,8 @@
       a.navbar-brand(href='/')
         i.fa.fa-gift
         | What I Want
+    .collapse.navbar-collapse
       ul.nav.navbar-nav
-        .collapse.navbar-collapse
         if !user
           li(class=title=='Home'?'active':undefined)
             a(href='/') Home
