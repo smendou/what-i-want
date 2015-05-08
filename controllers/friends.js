@@ -9,13 +9,13 @@ exports.getSearch = function(req, res, next) {
   User.getPendingFriends(req.user._id, function (err, friends) {
     var usrs = {};
     if(err){ return next(err); }
-    usrs.pending = friends;
+    usrs.pending = (_.isEmpty(friends))?null:friends;
     User.getRequestedFriends(req.user._id, function (err, friends) {
       if(err){ return next(err); }
-      usrs.requested = friends;
+      usrs.requested = (_.isEmpty(friends))?null:friends;
       User.getAcceptedFriends(req.user._id, function (err, friends) {
         if(err){ return next(err); }
-        usrs.accepted = friends;
+        usrs.accepted = (_.isEmpty(friends))?null:friends;
         res.render('friends', {
           title: 'Friends',
           usrs : usrs

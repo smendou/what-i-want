@@ -1,7 +1,7 @@
 extends layout
 
 block content
-	if !usrs.pending.isEmpty()
+	if usrs.pending
 		h4 Pending : 
 		.row
 			for usr in usrs.pending
@@ -14,7 +14,7 @@ block content
 								else
 									img(src='#{usr.friend.gravatar(40)}')
 								| #{usr.friend.profile.name || usr.friend.email || usr.friend.id}
-	if !usrs.requested.isEmpty()
+	if usrs.requested
 		h4 Requested :
 		.row
 			for usr in usrs.requested
@@ -27,7 +27,7 @@ block content
 								else
 									img(src='#{usr.friend.gravatar(40)}')
 								| #{usr.friend.profile.name || usr.friend.email || usr.friend.id}
-	if !usrs.accepted.isEmpty()
+	if usrs.accepted
 		h4 Accepted
 		.row
 			for usr in usrs.accepted
