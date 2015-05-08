@@ -3,7 +3,7 @@ extends layout
 block content
 	.page-header
 		h3 Add a new want
-	form.form-horizontal(action='/mywants/#{user._id}', method='POST')
+	form.form-horizontal(action='/#{user._id/addWant}', method='POST')
 		input(type='hidden', name='_csrf', value=_csrf)
 		.form-group
 			label.col-sm-2.control-label(for='name') Name
@@ -19,7 +19,7 @@ block content
 					i.fa.fa-pencil
 					| Add want
 	.page-header
-		h3 #{user.profile.name || user.email || user._id}
+		h3 Your wants
 	.row
 		for want in user.wants
 			.col-sm-4.col-md-2
