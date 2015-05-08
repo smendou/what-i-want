@@ -6,7 +6,7 @@ block content
 		.row
 			for usr in usrs.pending
 				.col-sm-4
-					a(href='/friends/add/#{usr.friend.id}')
+					a(href='/addfriend/#{usr.friend.id}')
 						.panel.panel-success
 							.panel-body
 								if usr.friend.profile.picture
@@ -19,7 +19,7 @@ block content
 		.row
 			for usr in usrs.requested
 				.col-sm-4
-					a(href='/friends/add/#{usr.friend.id}')
+					a(href='/addfriend/#{usr.friend.id}')
 						.panel.panel-default
 							.panel-body
 								if usr.friend.profile.picture
@@ -32,7 +32,7 @@ block content
 		.row
 			for usr in usrs.accepted
 				.col-sm-4
-					a(href='/friends/add/#{usr.friend.id}')
+					a(href='/addfriend/#{usr.friend.id}')
 						.panel.panel-default
 							.panel-body
 								if usr.friend.profile.picture
