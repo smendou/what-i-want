@@ -11,12 +11,17 @@ exports.getMyWants = function(req, res) {
 
 /**
  * POST /
- * Get friends list.
+ * Add new want.
  */
-exports.postNewWant = function(req, res, next) {
-  
+exports.postNewWant = function(req, res, next) {  
   var want = new Want({
     name: req.body.name,
     url: req.body.url
+  });
+  want.save(function(err) {
+  	if (err) return next(err);
+  	res.render('mywants', {
+	   title: 'My Wants'
+	});
   });
 };
