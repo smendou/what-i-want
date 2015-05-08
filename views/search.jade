@@ -5,7 +5,7 @@ block content
 	.row
 		for usr in usrs
 			.col-sm-4
-				a(href='/addfriend/#{usr.id}')
+				a(href='/search/addfriend/#{usr.id}')
 					.panel.panel-default
 						.panel-body
 							if usr.profile.picture
