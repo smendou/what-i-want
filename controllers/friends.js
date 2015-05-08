@@ -31,7 +31,7 @@ exports.getSearch = function(req, res, next) {
  */
 exports.postSearch = function(req, res, next) {
   
-  User.find({'profile.name' : req.body.name}, function(err, users){
+  User.find({'profile.name' : req.body.search}, function(err, users){
     if(err){ return next(err); }
 
     res.render('search', {

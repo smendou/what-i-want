@@ -10,6 +10,7 @@
         i.fa.fa-gift
         | What I Want
       ul.nav.navbar-nav
+        .collapse.navbar-collapse
         if !user
           li(class=title=='Home'?'active':undefined)
             a(href='/') Home
@@ -17,7 +18,6 @@
             a(href='/contact') Contact
         else
           li(class=title=='Friends'?'active':undefined)
-            .collapse.navbar-collapse
               form.navbar-form.navbar-left(action='/search', method='POST')
                 input(type='hidden', name='_csrf', value=_csrf)
                 .input-group.input-group-sm(style='max-width:360px')
