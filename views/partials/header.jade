@@ -9,14 +9,14 @@
       a.navbar-brand(href='/')
         i.fa.fa-gift
         | What I Want
+    form.navbar-form.navbar-left(action='/search', method='POST')
+      input(type='hidden', name='_csrf', value=_csrf)
+      .input-group.input-group-sm(style='max-width:360px')
+        input.form-control(type='text', name='search', id='search', placeholder='Search')
+        .input-group-btn
+          button.btn.btn.btn-default(type='submit')
+            i.fa.fa-search
     .collapse.navbar-collapse
-      form.navbar-form.navbar-left(action='/search', method='POST')
-        input(type='hidden', name='_csrf', value=_csrf)
-        .input-group.input-group-sm(style='max-width:360px')
-          input.form-control(type='text', name='search', id='search', placeholder='Search')
-          .input-group-btn
-            button.btn.btn.btn-default(type='submit')
-              i.fa.fa-search
       ul.nav.navbar-nav
         if !user
           li(class=title=='Home'?'active':undefined)
