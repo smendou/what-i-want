@@ -4,7 +4,7 @@ var Want = require('../models/Want');
  * My Wants page.
  */
 exports.getMyWants = function(req, res, next) {
-  Want.find(function(err, wants){
+  Want.find({'user':req.user._id},function(err, wants){
     if(err){ return next(err); }
 
     res.render('mywants', {
