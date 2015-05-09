@@ -4,7 +4,7 @@ var Want = require('../models/Want');
  * My Wants page.
  */
 exports.getMyWants = function(req, res, next) {
-  Want.find({}, function(err, wants){
+  Want.find(function(err, wants){
     if(err){ return next(err); }
 
     res.render('mywants', {
@@ -30,8 +30,19 @@ exports.postNewWant = function(req, res, next) {
   	req.user.wants.push(want);
   	req.user.save(function(err) {
   		if (err) return next(err);
-  		res.json(req.user.wants);
-  		//res.redirect('../../mywants');
+  		res.redirect('../../mywants');
   	});
+  });
+};
+
+exports.getWant = function(req, res, next, id) {
+  var query = Want.findById(id);
+
+  query.exec(function (err, want){
+    if (err) { return next(err); }
+    if (!want) { return next(new Error('can\'t find want')); }
+
+    req.want = want;
+    return next();
   });
 };

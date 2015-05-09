@@ -120,7 +120,7 @@ app.get('/search/addfriend/:friendid', passportConf.isAuthenticated, friendsCont
 
 app.get('/wallofwants', passportConf.isAuthenticated, wallOfWantsController.index);
 
-app.get('/mywants', passportConf.isAuthenticated, myWantsController.getMyWants);
+app.get('/:user/mywants', passportConf.isAuthenticated, myWantsController.getMyWants);
 app.post('/:user/addWant', passportConf.isAuthenticated, myWantsController.postNewWant);
 
 /**
