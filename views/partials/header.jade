@@ -12,7 +12,7 @@
      .col-sm-3.col-md-3
         form.navbar-form.navbar-left(action='/search', method='POST')
           input(type='hidden', name='_csrf', value=_csrf)
-          .input-group(style='max-width:360px')
+          .input-group.input-group-sm(style='max-width:360px')
             input.form-control(type='text', name='search', id='search', placeholder='Search')
             .input-group-btn
               button.btn.btn.btn-primary(type='submit')
