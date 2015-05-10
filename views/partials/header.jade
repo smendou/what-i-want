@@ -52,7 +52,7 @@
               li.divider
               li
                 a(href='/logout') Logout
-.modal-fade(id="wantModal", tabindex="-1",role="dialog",aria-hidden="true")
+.modal.fade(id="wantModal", tabindex="-1",role="dialog",aria-hidden="true")
   .modal-dialog
     .modal-content
       .modal-header
@@ -64,13 +64,12 @@
           .form-group
             textarea.form-control.input-lg(autofocus="",placeholder="What do you want?")
       .modal-footer
-        div
-          button.btn.btn-primary.btn-sm(data-dismiss="modal",aria-hidden="true")
-            |Post
-            ul.pull-left.list-inline
-              li
-                a(href="")
-                  i.fa.fa-upload
-              li
-                a(href="")
-                  i.fa.fa-camera
+        button.btn.btn-primary.btn-sm(data-dismiss="modal",aria-hidden="true")
+          |Post
+        ul.pull-left.list-inline
+          li
+            a(href="")
+              i.fa.fa-upload
+          li
+            a(href="")
+              i.fa.fa-camera
