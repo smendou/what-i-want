@@ -52,13 +52,13 @@
               li.divider
               li
                 a(href='/logout') Logout
-.modal-fade(id="postModal", tabindex="-1",role="dialog",aria-hidden="true")
+.modal-fade(id="wantModal", tabindex="-1",role="dialog",aria-hidden="true")
   .modal-dialog
     .modal-content
       .modal-header
         button.close(type="button", data-dismiss="modal",aria-hidden="true")
           i.fa.fa-plus
-          |Update Status
+        |New Want
       .modal-body
         form.form.center-block
           .form-group
@@ -67,8 +67,10 @@
         div
           button.btn.btn-primary.btn-sm(data-dismiss="modal",aria-hidden="true")
             |Post
-            ul.pull-left.list-inlineli(class=title=='New Want'?'active':undefined)
+            ul.pull-left.list-inline
               li
-                a(href='#wantModal', data-toggle="modal")
-                  i.fa.fa-plus
-                  | New Want
+                a(href="")
+                  i.fa.fa-upload
+              li
+                a(href="")
+                  i.fa.fa-camera
