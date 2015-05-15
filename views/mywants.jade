@@ -1,14 +1,12 @@
 extends layout
 
 block content
-.row
-	.col-sm-5
+	.page-header
+		h3 Your wants
+	.row
 		for want in wants
-			.panel.panel-default
-				.panel-thumbnail
-					img.img-responsive(src="#{user.gravatar(70)}")
-				.panel-body
-					p.lead #{want.name}
-					p 45 Followers, 13 Posts
-					p
-						img(src="https://lh3.googleusercontent.com/uFp_tsTJboUY7kue5XAsGA=s28",width="28px",height="28px")
+			.col-sm-4.col-md-2
+				.thumbnail
+					img(src='#{user.gravatar(70)}')
+					.caption
+						h5 #{want.name}
