@@ -64,12 +64,17 @@
           input(type='hidden', name='_csrf', value=_csrf)
           .form-group
             label.col-sm-2.control-label(for='name') Name
-            input.form-control(type='text', name='name', id='name')
-            label.col-sm-2.control-label(for='url') Url
-            input.form-control(type='text', name='url', id='url')
+            .col-sm-4
+              input.form-control(type='text', name='name', id='name')
           .form-group
-            button.btn.btn-primary.btn-sm(type='submit',data-dismiss="modal",aria-hidden="true")
-              |Post
+            label.col-sm-2.control-label(for='url') Url
+            .col-sm-4
+              input.form-control(type='text', name='url', id='url')
+          .form-group
+            .col-sm-offset-2.col-sm-4
+              button.btn.btn.btn-primary(type='submit')
+                i.fa.fa-pencil
+                | Add want
       .modal-footer
         ul.pull-left.list-inline
           li
