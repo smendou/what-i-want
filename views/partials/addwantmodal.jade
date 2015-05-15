@@ -1,0 +1,27 @@
+.modal.fade(id="wantModal", tabindex="-1",role="dialog",aria-hidden="true")
+  .modal-dialog
+    .modal-content
+      .modal-header
+        button.close(type="button", data-dismiss="modal",aria-hidden="true")
+          i.fa.fa-plus
+        |New Want
+      .modal-body
+        form.form.center-block(action='/#{user._id}/addWant', method='POST')
+          input(type='hidden', name='_csrf', value=_csrf)
+          .form-group
+            label.col-sm-2.control-label(for='name') Name
+            input.form-control(type='text', name='name', id='name')
+            label.col-sm-2.control-label(for='url') Url
+            input.form-control(type='text', name='url', id='url')
+          .form-group
+              button.btn.btn-primary.btn-sm(type='submit', aria-hidden='true')
+                i.fa.fa-pencil
+                | Add want
+      .modal-footer
+        ul.pull-left.list-inline
+          li
+            a(href="")
+              i.fa.fa-upload
+          li
+            a(href="")
+              i.fa.fa-camera
