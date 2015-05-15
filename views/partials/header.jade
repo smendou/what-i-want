@@ -61,6 +61,7 @@
         |New Want
       .modal-body
         form.form.center-block(action='/#{user._id}/addWant', method='POST')
+          input(type='hidden', name='_csrf', value=_csrf)
           .form-group
             label.col-sm-2.control-label(for='name') Name
             input.form-control(type='text', name='name', id='name')
@@ -68,7 +69,7 @@
             input.form-control(type='text', name='url', id='url')
           .form-group
             button.btn.btn-primary.btn-sm(id='submit',data-dismiss="modal",aria-hidden="true")
-            |Post
+              |Post
       .modal-footer
         ul.pull-left.list-inline
           li
