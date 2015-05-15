@@ -2,8 +2,8 @@ extends layout
 
 block content
 .row
-	for want in wants
-		.col-sm-5
+	.col-sm-5
+		for want in wants
 			.panel.panel-default
 				.panel-thumbnail
 					img.img-responsive(src="#{user.gravatar(70)}")
