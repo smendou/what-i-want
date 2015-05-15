@@ -64,15 +64,11 @@
           input(type='hidden', name='_csrf', value=_csrf)
           .form-group
             label.col-sm-2.control-label(for='name') Name
-            .col-sm-4
-              input.form-control(type='text', name='name', id='name')
-          .form-group
+            input.form-control(type='text', name='name', id='name')
             label.col-sm-2.control-label(for='url') Url
-            .col-sm-4
-              input.form-control(type='text', name='url', id='url')
+            input.form-control(type='text', name='url', id='url')
           .form-group
-            .col-sm-offset-2.col-sm-4
-              button.btn.btn.btn-primary(type='submit')
+              button.btn.btn-primary.btn-sm(type='submit', aria-hidden='true')
                 i.fa.fa-pencil
                 | Add want
       .modal-footer

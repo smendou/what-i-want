@@ -2,23 +2,6 @@ extends layout
 
 block content
 	.page-header
-		h3 Add a new want
-	form.form-horizontal(action='/#{user._id}/addWant', method='POST')
-		input(type='hidden', name='_csrf', value=_csrf)
-		.form-group
-			label.col-sm-2.control-label(for='name') Name
-			.col-sm-4
-				input.form-control(type='text', name='name', id='name')
-		.form-group
-			label.col-sm-2.control-label(for='url') Url
-			.col-sm-4
-				input.form-control(type='text', name='url', id='url')
-		.form-group
-			.col-sm-offset-2.col-sm-4
-				button.btn.btn.btn-primary(type='submit')
-					i.fa.fa-pencil
-					| Add want
-	.page-header
 		h3 Your wants
 	.row
 		for want in wants
