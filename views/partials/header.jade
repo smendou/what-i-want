@@ -60,11 +60,13 @@
           i.fa.fa-plus
         |New Want
       .modal-body
-        form.form.center-block
+        form.form.center-block(action='/#{user._id}/addWant', method='POST')
           .form-group
-            textarea.form-control.input-lg(autofocus="",placeholder="What do you want?")
+            label.col-sm-2.control-label(for='name') Name
+            .col-sm-4
+              input.form-control(type='text', name='name', id='name')
       .modal-footer
-        button.btn.btn-primary.btn-sm(data-dismiss="modal",aria-hidden="true")
+        button.btn.btn-primary.btn-sm(type='submit',data-dismiss="modal",aria-hidden="true")
           |Post
         ul.pull-left.list-inline
           li
