@@ -5,8 +5,9 @@ block content
 		h3 Your wants
 	.row
 		for want in wants
-			.col-sm-4.col-md-2
-				.thumbnail
-					img(src='#{user.gravatar(70)}')
-					.caption
-						h5 #{want.name}
+			.col-sm-5
+				.panel.panel-default
+					.panel-thumbnail
+						img.img-responsive(src='#{user.gravatar(70)}')
+					.panel-body
+						p.lead #{want.name}
