@@ -1,14 +1,12 @@
-.navbar.navbar-default.navbar-fixed-top
-  .container
+.navbar.navbar-blue.navbar-static-top
     .navbar-header
       button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
         span.sr-only Toggle navigation
         span.icon-bar
         span.icon-bar
         span.icon-bar
-      a.navbar-brand(href='/')
+      a.navbar-brand.logo(href='/')
         i.fa.fa-gift
-        | What I Want
     .collapse.navbar-collapse
       if user
         form.navbar-form.navbar-left(action='/search', method='POST')
