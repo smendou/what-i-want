@@ -8,12 +8,15 @@ html
     title #{title} - What I Want
     != css('main')
   body
-    include partials/header
-
-    .container
-      include partials/flash
-      block content
-
-    include partials/footer
+    .wrapper
+      .box
+        .row.row-offcanvas.row-offcanvas-left
+          .column.col-sm-2.col-xs-1.sidebar-offcanvas
+          .column.col-sm-10.col-xs-11
+            include partials/header
+            .container
+              include partials/flash
+              block content
+            include partials/footer
 
     != js('application')
