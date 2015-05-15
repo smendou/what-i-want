@@ -63,8 +63,9 @@
         form.form.center-block(action='/#{user._id}/addWant', method='POST')
           .form-group
             label.col-sm-2.control-label(for='name') Name
-            .col-sm-4
-              input.form-control(type='text', name='name', id='name')
+            input.form-control(type='text', name='name', id='name')
+            label.col-sm-2.control-label(for='url') Url
+            input.form-control(type='text', name='url', id='url')
       .modal-footer
         button.btn.btn-primary.btn-sm(type='submit',data-dismiss="modal",aria-hidden="true")
           |Post
