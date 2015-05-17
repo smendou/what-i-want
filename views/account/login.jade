@@ -5,7 +5,9 @@ block content
     .col-sm-6.col-sm-offset-3.text-center  
       .panel.panel-default
         .panel-heading
-          h4 Sign in
+          h4
+            i.fa.fa-gift
+            | What I Want
         .panel-body
           form(method='POST')
             input(type='hidden', name='_csrf', value=_csrf)
@@ -19,6 +21,7 @@ block content
               button.btn.btn-success(type='submit')
                 i.fa.fa-user
                 | Login
+            .form-group
               a.btn.btn-link(href='/forgot') Forgot your password?
           hr
           h5 Or connect with :
