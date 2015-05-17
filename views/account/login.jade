@@ -2,7 +2,7 @@ extends ../layout
 
 block content
   .row
-    .col-sm-6.col-sm-offset-3
+    .col-sm-6.col-sm-offset-3.text-center
       .panel.panel-default
         .panel.panel-heading
           h4 Sign in
@@ -20,16 +20,16 @@ block content
                 i.fa.fa-user
                 | Login
               a.btn.btn-link(href='/forgot') Forgot your password?
-          ul.social-icons.icon-circle.icon-zoom.list-unstyled.list-inline.text-center
-            li
-              a(href='/auth/facebook')
-                i.fa.fa-facebook
-            li
-              a(href='/auth/twitter')
-                i.fa.fa-twitter
-            li
-              a(href='/auth/google')
-                i.fa.fa-google-plus
-            li
-              a(href='/auth/instagram')
-                i.fa.fa-instagram
+            ul.social-icons.icon-circle.icon-zoom.list-unstyled.list-inline
+              li
+                a(href='/auth/facebook')
+                  i.fa.fa-facebook
+              li
+                a(href='/auth/twitter')
+                  i.fa.fa-twitter
+              li
+                a(href='/auth/google')
+                  i.fa.fa-google-plus
+              li
+                a(href='/auth/instagram')
+                  i.fa.fa-instagram
