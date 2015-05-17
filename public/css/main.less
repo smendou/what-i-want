@@ -13,14 +13,6 @@ html, body {
    font-size:13px;
 }
 
-a {
-  color:#222222;
-}
-
-a:hover {
-  text-decoration:none;
-}
-
 hr {
   border-color:#dedede;
 }
@@ -63,20 +55,15 @@ hr {
     right: 0;
     top: 0;
     background-color:#444444;
-  /*
-    background-image:url('/assets/example/bg_suburb.jpg');
-    background-size:cover;
-    background-attachment:fixed;
-  */
 }
 
 .divider {
   margin-top:32px;
 }
 
-.navbar-blue {
+.navbar-custom-top {
     border-width:0;
-  background-color:#40993B;
+    background-color:#40993B;
     color:#ffffff;
     font-family:arial,sans-serif;
     top:0;
@@ -84,14 +71,14 @@ hr {
     width:inherit;
 }
 
-.navbar-blue li > a,.navbar-toggle  {
+.navbar-custom-top li > a,.navbar-toggle  {
    color:#efefef;
 }
 
-.navbar-blue .dropdown-menu li a {color:#2A8835;}
-.navbar-blue .dropdown-menu li > a {padding-left:30px;}
+.navbar-custom-top .dropdown-menu li a {color:#2A8835;}
+.navbar-custom-top .dropdown-menu li > a {padding-left:30px;}
 
-.navbar-blue li>a:hover, .navbar-blue li>a:focus, .navbar-blue .open, .navbar-blue .open>a, .navbar-blue .open>a:hover, .navbar-blue .open>a:focus {
+.navbar-custom-top li>a:hover, .navbar-custom-top li>a:focus, .navbar-custom-top .open, .navbar-custom-top .open>a, .navbar-custom-top .open>a:hover, .navbar-custom-top .open>a:focus {
    background-color:#2A8835;
    color:#fff;
 }
@@ -138,7 +125,9 @@ hr {
   text-decoration:none;
   text-shadow:0 0 1px;
   border-radius:2px;
+  margin-right: 0px;
 }
+
 #sidebar-footer {
   background-color:#444;
   position:absolute;
@@ -250,7 +239,7 @@ small.text-muted {
   padding-top:20px;
   }
 
-  .navbar-blue {
+  .navbar-custom-top {
   background-color:#40993B;
     top:0;
     width:100%;
@@ -292,5 +281,4 @@ small.text-muted {
 .fa,
 [class^='ion-'] {
   margin-right: 6px;
-  margin-left: 6px;
 }
