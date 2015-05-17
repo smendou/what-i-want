@@ -5,38 +5,51 @@ if user
                 i.fa.fa-chevron-right
                    
     ul.nav.hidden-xs(id="lg-menu")
-        li.active
-            a(href="#featured")
-                i.fa.fa-list-alt
-                | Featured
-        li
-            a(href="#stories")
-                i.fa.fa-list
-                | Stories
-        li
-            a(href="#")
-                i.fa.fa-paperclip
-                | Saved
-        li
-            a(href="#")
-                i.fa.fa-refresh
-                | Refresh
+        if !user
+            li(class=title=='Login'?'active':undefined)
+                a(href='/login') Login
+            li(class=title=='Signup'?'active':undefined)
+                a(href='/signup') Signup
+        else
+            li(class=title=='Wall of Wants'?'active':undefined)
+                a(href='/wallofwants')
+                    i.fa.fa-home
+                    | Wall of Wants
+            li(class=title=='My Wants'?'active':undefined)
+                a(href='/#{user._id}/mywants')
+                    i.fa.fa-gift
+                    | My Wants
+            li(class=title=='Friends'?'active':undefined)
+                a(href='/friends')
+                    i.fa.fa-users
+                    | Friends
+            li(class=title=='New Want'?'active':undefined)
+                a(href='#wantModal', data-toggle="modal")
+                    i.fa.fa-plus
+                    | New Want
     ul.list-unstyled.hidden-xs(id="sidebar-footer")
         li
             a(href="#")
-                h3 Bootstrap
-                i.fa.fa-heart-empty
-                | Bootply
+                i.fa.fa-gift
+                | What i Want
     ul.nav.visible-xs(id="xs-menu")
-        li.active
-            a.text-center(href="#featured")
-                i.fa.fa-list-alt
-        li
-            a.text-center(href="#stories")
-                i.fa.fa-list
-        li
-            a.text-center(href="#")
-                i.fa.fa-paperclip
-        li
-            a.text-center(href="#")
-                i.fa.fa-refresh
+        if !user
+            li(class=title=='Login'?'active':undefined)
+                a.text-center(href='/login')
+                    i.fa.fa-login
+            li(class=title=='Signup'?'active':undefined)
+                a.text-center(href='/signup')
+                    i.fa.fa-signup
+        else
+            li(class=title=='Wall of Wants'?'active':undefined)
+                a.text-center(href='/wallofwants')
+                    i.fa.fa-home
+            li(class=title=='My Wants'?'active':undefined)
+                a.text-center(href='/#{user._id}/mywants')
+                    i.fa.fa-gift
+            li(class=title=='Friends'?'active':undefined)
+                a.text-center(href='/friends')
+                    i.fa.fa-users
+            li(class=title=='New Want'?'active':undefined)
+                a.text-center(href='#wantModal', data-toggle="modal")
+                    i.fa.fa-plus
