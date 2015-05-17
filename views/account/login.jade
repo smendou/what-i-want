@@ -19,16 +19,20 @@ block content
               button.btn.btn-default(type='submit')
                 i.fa.fa-user
                 | Login
-              .form-groupe
               a.btn.btn-link(href='/forgot') Forgot your password?
         .panel.panel-footer
-          h4 Or connect with...
           p
-            a(href='/auth/facebook')
-              i.fa.fa-facebook
-            a(href='/auth/twitter')
-              i.fa.fa-twitter
-            a(href='/auth/google')
-              i.fa.fa-google-plus
-            a(href='/auth/instagram')
-              i.fa.fa-instagram
+            |Or connect with...
+          ul.pull-left.list-inline
+            li
+              a(href='/auth/facebook')
+                i.fa.fa-facebook
+            li
+              a(href='/auth/twitter')
+                i.fa.fa-twitter
+            li
+              a(href='/auth/google')
+                i.fa.fa-google-plus
+            li
+              a(href='/auth/instagram')
+                i.fa.fa-instagram
