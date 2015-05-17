@@ -8,18 +8,30 @@ html
     title #{title} - What I Want
     != css('main')
   body
-    .wrapper
-      .box
-        .row.row-offcanvas.row-offcanvas-left
-          //.column.col-sm-2.col-xs-1.sidebar-offcanvas(id='sidebar')
-          //  include partials/sidebar
-          .column.col-sm-12.col-xs-12(id="main")
-            include partials/navtop
-            .padding
-              .full.col-sm-9
-                  include partials/flash
-                  block content
-                  include partials/footer
+    if !user
+      .wrapper
+        .box
+          .row.row-offcanvas.row-offcanvas-left
+            .column.col-sm-12.col-xs-12(id="main")
+              include partials/navtop
+              .padding
+                .full.col-sm-9
+                    include partials/flash
+                    block content
+                    include partials/footer
+    else
+      .wrapper
+        .box
+          .row.row-offcanvas.row-offcanvas-left
+            .column.col-sm-2.col-xs-1.sidebar-offcanvas(id='sidebar')
+              include partials/sidebar
+            .column.col-sm-12.col-xs-12(id="main")
+              include partials/navtop
+              .padding
+                .full.col-sm-9
+                    include partials/flash
+                    block content
+                    include partials/footer
     include partials/addwantmodal
 
     != js('application')
