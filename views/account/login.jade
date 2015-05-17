@@ -35,3 +35,24 @@ block content
               li
                 a(href='/auth/instagram')
                   i.fa.fa-instagram
+      .panel.panel-default
+        .panel-heading
+          a.pull-right(href="#") View all
+          h4 Stackoverflow
+        .panel-body
+          img.img-circle.pull-right(src="//placehold.it/150x150")
+          a(href="#") Keyword: Bootstrap
+          .clearfix
+          hr
+          p If you're looking for help with Bootstrap code, the twitter-bootstrap tag at 
+            a(href="http://stackoverflow.com/questions/tagged/twitter-bootstrap") Stackoverflow
+          | is a good place to find answers.
+          hr
+          form
+            .input-group
+              .input-group-btn
+                button.btn.btn-default
+                  |+1
+                button.btn.btn-default
+                  i.fa.fa-share
+              input.form-control(type="text",class="",placeholder="Add a comment..")
