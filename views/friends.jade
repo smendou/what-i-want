@@ -38,14 +38,10 @@ block content
 					ul.list-group
 						for usr in usrs.accepted
 							li.list-group-item
-								.row
-									.col-md-3
-										if usr.friend.profile.picture
-											img.img-circle(src='#{usr.friend.profile.picture}')
-										else
-											img.img-circle(src='#{usr.friend.gravatar(70)}')
-									.col-md-6
-										| #{usr.friend.profile.name || usr.friend.email || usr.friend.id}
-									.col-md-3
-										a.btn.btn-primary(href='/search/addfriend/#{usr.friend.id}')
-											|Wants
+								if usr.friend.profile.picture
+									img.img-circle(src='#{usr.friend.profile.picture}')
+								else
+									img.img-circle(src='#{usr.friend.gravatar(70)}')
+								| #{usr.friend.profile.name || usr.friend.email || usr.friend.id}
+								a.btn.btn-default.pull-right(href='/search/addfriend/#{usr.friend.id}')
+									|Wants
