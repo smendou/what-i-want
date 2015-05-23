@@ -9,14 +9,14 @@ block content
 				.panel-body
 					ul.list-group
 						for usr in usrs.pending
-						li.list-group-item
-							if usr.friend.profile.picture
-								img.img-circle(src='#{usr.friend.profile.picture}')
-							else
-								img.img-circle(src='#{usr.friend.gravatar(70)}')
-							| #{usr.friend.profile.name || usr.friend.email || usr.friend.id}
-							a.btn.btn-info(href='/search/addfriend/#{usr.friend.id}')
-								|Accept
+							li.list-group-item
+								if usr.friend.profile.picture
+									img.img-circle(src='#{usr.friend.profile.picture}')
+								else
+									img.img-circle(src='#{usr.friend.gravatar(70)}')
+								| #{usr.friend.profile.name || usr.friend.email || usr.friend.id}
+								a.btn.btn-info(href='/search/addfriend/#{usr.friend.id}')
+									|Accept
 		if usrs.requested
 			.panel.panel-default
 				.panel-heading
@@ -24,12 +24,12 @@ block content
 				.panel-body
 					ul.list-group
 						for usr in usrs.requested
-						li.list-group-item
-							if usr.friend.profile.picture
-								img.img-circle(src='#{usr.friend.profile.picture}')
-							else
-								img.img-circle(src='#{usr.friend.gravatar(70)}')
-							| #{usr.friend.profile.name || usr.friend.email || usr.friend.id}
+							li.list-group-item
+								if usr.friend.profile.picture
+									img.img-circle(src='#{usr.friend.profile.picture}')
+								else
+									img.img-circle(src='#{usr.friend.gravatar(70)}')
+								| #{usr.friend.profile.name || usr.friend.email || usr.friend.id}
 		if usrs.accepted
 			.panel.panel-default
 				.panel-heading
@@ -37,11 +37,11 @@ block content
 				.panel-body
 					ul.list-group
 						for usr in usrs.accepted
-						li.list-group-item
-							if usr.friend.profile.picture
-								img.img-circle(src='#{usr.friend.profile.picture}')
-							else
-								img.img-circle(src='#{usr.friend.gravatar(70)}')
-							| #{usr.friend.profile.name || usr.friend.email || usr.friend.id}
-							a.btn.btn-primary(href='/search/addfriend/#{usr.friend.id}')
-								|Wants
+							li.list-group-item
+								if usr.friend.profile.picture
+									img.img-circle(src='#{usr.friend.profile.picture}')
+								else
+									img.img-circle(src='#{usr.friend.gravatar(70)}')
+								| #{usr.friend.profile.name || usr.friend.email || usr.friend.id}
+								a.btn.btn-primary(href='/search/addfriend/#{usr.friend.id}')
+									|Wants
