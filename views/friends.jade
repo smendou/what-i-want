@@ -1,46 +1,47 @@
 extends layout
 
 block content
-	if usrs.pending
-		.page-header
-			h3 Pending requests
-		.row
-			for usr in usrs.pending
-				.col-sm-4.col-md-2
-					.thumbnail
-						if usr.friend.profile.picture
-							img(src='#{usr.friend.profile.picture}')
-						else
-							img(src='#{usr.friend.gravatar(70)}')
-						.caption
-							h5 #{usr.friend.profile.name || usr.friend.email || usr.friend.id}
+	.row
+		if usrs.pending
+			.panel.panel-default
+				.panel-heading
+					h4 Pending requests
+				.panel-body
+					ul.list-group
+						for usr in usrs.pending
+						li.list-group-item
+							if usr.friend.profile.picture
+								img.img-circle(src='#{usr.friend.profile.picture}')
+							else
+								img.img-circle(src='#{usr.friend.gravatar(70)}')
+							| #{usr.friend.profile.name || usr.friend.email || usr.friend.id}
 							a.btn.btn-info(href='/search/addfriend/#{usr.friend.id}')
 								|Accept
-	if usrs.requested
-		.page-header
-			h3 Requested friends
-		.row
-			for usr in usrs.requested
-				.col-sm-4.col-md-2
-					.thumbnail
-						if usr.friend.profile.picture
-							img(src='#{usr.friend.profile.picture}')
-						else
-							img(src='#{usr.friend.gravatar(70)}')
-						.caption
-							h5 #{usr.friend.profile.name || usr.friend.email || usr.friend.id}
-	if usrs.accepted
-		.page-header
-			h3 Friends
-		.row
-			for usr in usrs.accepted
-				.col-sm-4.col-md-2
-					.thumbnail
-						if usr.friend.profile.picture
-							img(src='#{usr.friend.profile.picture}')
-						else
-							img(src='#{usr.friend.gravatar(70)}')
-						.caption
-							h5 #{usr.friend.profile.name || usr.friend.email || usr.friend.id}
+		if usrs.requested
+			.panel.panel-default
+				.panel-heading
+					h4 Requested friends
+				.panel-body
+					ul.list-group
+						for usr in usrs.requested
+						li.list-group-item
+							if usr.friend.profile.picture
+								img.img-circle(src='#{usr.friend.profile.picture}')
+							else
+								img.img-circle(src='#{usr.friend.gravatar(70)}')
+							| #{usr.friend.profile.name || usr.friend.email || usr.friend.id}
+		if usrs.accepted
+			.panel.panel-default
+				.panel-heading
+					h4 Friends
+				.panel-body
+					ul.list-group
+						for usr in usrs.accepted
+						li.list-group-item
+							if usr.friend.profile.picture
+								img.img-circle(src='#{usr.friend.profile.picture}')
+							else
+								img.img-circle(src='#{usr.friend.gravatar(70)}')
+							| #{usr.friend.profile.name || usr.friend.email || usr.friend.id}
 							a.btn.btn-primary(href='/search/addfriend/#{usr.friend.id}')
 								|Wants
