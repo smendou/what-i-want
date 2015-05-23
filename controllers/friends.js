@@ -47,7 +47,21 @@ exports.postSearch = function(req, res, next) {
  */
 exports.addFriend = function(req, res, next) {
   User.requestFriend(req.user._id, req.params.friendid, function(err, friendships){
-    res.redirect('../../friends');
+    var usrs = {};
+    if(err){ return next(err); }
+    usrs.pending = (isEmpty(friends))?null:friends;
+    User.getRequestedFriends(req.user._id, function (err, friends) {
+      if(err){ return next(err); }
+      usrs.requested = (isEmpty(friends))?null:friends;
+      User.getAcceptedFriends(req.user._id, function (err, friends) {
+        if(err){ return next(err); }
+        usrs.accepted = (isEmpty(friends))?null:friends;
+        res.render('friends', {
+          title: 'Friends',
+          usrs : usrs
+        });
+      });  
+    });
   });
 };
 
