@@ -39,13 +39,13 @@ block content
 						for usr in usrs.accepted
 							li.list-group-item
 								.row
-									.col-md-1
+									.col-md-3.text-center
 										if usr.friend.profile.picture
 											img.img-circle(src='#{usr.friend.profile.picture}')
 										else
 											img.img-circle(src='#{usr.friend.gravatar(70)}')
-									.col-md-9
+									.col-md-6.text-center
 										| #{usr.friend.profile.name || usr.friend.email || usr.friend.id}
-									.col-md-2
+									.col-md-3.text-center
 										a.btn.btn-primary(href='/search/addfriend/#{usr.friend.id}')
 											|Wants
