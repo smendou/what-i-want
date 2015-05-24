@@ -55,7 +55,10 @@ exports.addFriend = function(req, res, next) {
 exports.removeFriend = function(req, res, next) {
   User.removeFriend(req.user._id, req.params.friendid, function(err, friendships){
     if(err){ return next(err); }
-    res.redirect('../../friends');
+    User.removeFriend(req.params.friendid, req.user._id, function(err, friendships){
+      if(err){ return next(err); }
+      res.redirect('../../friends');
+    });
   });
 };
 
