@@ -3,7 +3,7 @@ extends layout
 block content
 	.row
 		if usrs.pending
-			.col-md-4
+			.col-md-6
 				.panel.panel-default
 					.panel-heading
 						h4 Pending requests
@@ -22,7 +22,7 @@ block content
 											a.btn.btn-info(href='/search/addfriend/#{usr.friend.id}')
 												|Accept
 		if usrs.requested
-			.col-md-4
+			.col-md-6
 				.panel.panel-default
 					.panel-heading
 						h4 Requested friends
@@ -36,7 +36,7 @@ block content
 										img.img-circle(src='#{usr.friend.gravatar(70)}')
 									| #{usr.friend.profile.name || usr.friend.email || usr.friend.id}
 		if usrs.accepted
-			.col-md-4
+			.col-md-6
 				.panel.panel-default
 					.panel-heading
 						h4 Friends
