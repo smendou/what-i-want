@@ -52,7 +52,7 @@ exports.addFriend = function(req, res, next) {
 };
 
 exports.rmFriend = function(req, res, next) {
-  User.removeFriend(req.user._id, req.params.friendid, function(err, friendships){
+  req.user.removeFriend(req.params.friendid, function(err, friendships){
     if(err){ return next(err); }
     res.json(req.user);
   });
