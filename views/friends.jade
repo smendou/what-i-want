@@ -12,12 +12,12 @@ block content
 							for usr in usrs.pending
 								li.list-group-item
 									.row
-										.col-md-1
+										.col-sm-1
 											if usr.friend.profile.picture
 												img.img-circle(src='#{usr.friend.profile.picture}')
 											else
 												img.img-circle(src='#{usr.friend.gravatar(70)}')
-										.col-md-11
+										.col-sm-11
 											| #{usr.friend.profile.name || usr.friend.email || usr.friend.id}
 											a.btn.btn-info(href='/search/addfriend/#{usr.friend.id}')
 												|Accept
