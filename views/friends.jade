@@ -46,7 +46,7 @@ block content
 									else
 										img.img-circle(src='#{usr.friend.gravatar(70)}')
 									| #{usr.friend.profile.name || usr.friend.email || usr.friend.id}
-									a.btn.btn-default.pull-right(href='/mywants/#{usr.friend.id}')
+									a.btn.btn-default.pull-right(href='/wants/#{usr.friend.id}')
 										|Wants
 									a.btn.btn-danger.pull-right(href='/removefriend/#{usr.friend.id}')
 										|Remove
