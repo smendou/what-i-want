@@ -24,9 +24,9 @@ block content
 					.panel-heading
 						h4 Requested friends
 					.panel-body
-						ul.list-group
+						.list-group
 							for usr in usrs.requested
-								li.list-group-item
+								.list-group-item
 									if usr.friend.profile.picture
 										img.img-circle(src='#{usr.friend.profile.picture}')
 									else
