@@ -3,20 +3,23 @@ extends layout
 block content
 	.row
 		if usrs.pending
-			.panel.panel-default
-				.panel-heading
-					h4 Pending requests
-				.panel-body
-					ul.list-group
-						for usr in usrs.pending
-							li.list-group-item
-								if usr.friend.profile.picture
-									img.img-circle(src='#{usr.friend.profile.picture}')
-								else
-									img.img-circle(src='#{usr.friend.gravatar(70)}')
-								| #{usr.friend.profile.name || usr.friend.email || usr.friend.id}
-								a.btn.btn-info(href='/search/addfriend/#{usr.friend.id}')
-									|Accept
+			.col-md-6
+				.panel.panel-default
+					.panel-heading
+						h4 Pending requests
+					.panel-body
+						ul.list-group
+							for usr in usrs.pending
+								li.list-group-item
+									.col-md-3
+										if usr.friend.profile.picture
+											img.img-circle(src='#{usr.friend.profile.picture}')
+										else
+											img.img-circle(src='#{usr.friend.gravatar(70)}')
+									.col-md-9
+										| #{usr.friend.profile.name || usr.friend.email || usr.friend.id}
+										a.btn.btn-info(href='/search/addfriend/#{usr.friend.id}')
+											|Accept
 		if usrs.requested
 			.panel.panel-default
 				.panel-heading
