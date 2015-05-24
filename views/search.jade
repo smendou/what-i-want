@@ -13,5 +13,5 @@ block content
 						img(src='#{usr.gravatar(70)}')
 					.caption
 						h5 #{usr.profile.name || usr.email || usr.id}
-						a.btn.btn-primary(href='/search/addfriend/#{usr.id}')
+						a.btn.btn-primary(href='/addfriend/#{usr.id}')
 							|Request
