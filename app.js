@@ -117,7 +117,7 @@ app.get('/account/unlink/:provider', passportConf.isAuthenticated, userControlle
 app.get('/friends', passportConf.isAuthenticated, friendsController.getFriends);
 app.post('/search', passportConf.isAuthenticated, friendsController.postSearch);
 app.get('/addfriend/:friendid', passportConf.isAuthenticated, friendsController.addFriend);
-app.get('/removefriend/:friendid', passportConf.isAuthenticated, friendsController.removeFriend);
+app.get('/removefriend/:friendid', passportConf.isAuthenticated, friendsController.rmFriend);
 
 app.get('/wallofwants', passportConf.isAuthenticated, wallOfWantsController.index);
 

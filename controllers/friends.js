@@ -51,8 +51,8 @@ exports.addFriend = function(req, res, next) {
   });
 };
 
-exports.removeFriend = function(req, res, next) {
-  User.removeFriend(req.user, req.params.friendid, function(err, friendships){
+exports.rmFriend = function(req, res, next) {
+  User.removeFriend(req.user._id, req.params.friendid, function(err, friendships){
     if(err){ return next(err); }
     res.json(friendships);
   });
