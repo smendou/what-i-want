@@ -11,16 +11,13 @@ block content
 						ul.list-group
 							for usr in usrs.pending
 								li.list-group-item
-									.row
-										.col-sm-1
-											if usr.friend.profile.picture
-												img.img-circle(src='#{usr.friend.profile.picture}')
-											else
-												img.img-circle(src='#{usr.friend.gravatar(70)}')
-										.col-sm-11
-											| #{usr.friend.profile.name || usr.friend.email || usr.friend.id}
-											a.btn.btn-info(href='/search/addfriend/#{usr.friend.id}')
-												|Accept
+									if usr.friend.profile.picture
+										img.img-circle(src='#{usr.friend.profile.picture}')
+									else
+										img.img-circle(src='#{usr.friend.gravatar(70)}')
+									| #{usr.friend.profile.name || usr.friend.email || usr.friend.id}
+									a.btn.btn-info.pull-right(href='/search/addfriend/#{usr.friend.id}')
+										|Accept
 		if usrs.requested
 			.col-md-6
 				.panel.panel-default
@@ -49,5 +46,5 @@ block content
 									else
 										img.img-circle(src='#{usr.friend.gravatar(70)}')
 									| #{usr.friend.profile.name || usr.friend.email || usr.friend.id}
-									a.btn.btn-default.pull-right(href='/search/addfriend/#{usr.friend.id}')
+									a.btn.btn-default.pull-right(href='/#{usr.friend.id}/mywants')
 										|Wants
