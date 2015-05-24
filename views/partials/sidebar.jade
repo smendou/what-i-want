@@ -8,9 +8,9 @@ if user
         li(class=title=='Wall of Wants'?'active':undefined)
             a(href='/wallofwants')
                 i.fa.fa-home
-                | Wall of Wants
+                | Wall
         li(class=title=='My Wants'?'active':undefined)
-            a(href='/#{user._id}/mywants')
+            a(href='/wants/#{user._id}')
                 i.fa.fa-gift
                 | My Wants
         li(class=title=='Friends'?'active':undefined)
@@ -31,7 +31,7 @@ if user
             a.text-center(href='/wallofwants')
                 i.fa.fa-home
         li(class=title=='My Wants'?'active':undefined)
-            a.text-center(href='/#{user._id}/mywants')
+            a.text-center(href='/wants/#{user._id}')
                 i.fa.fa-gift
         li(class=title=='Friends'?'active':undefined)
             a.text-center(href='/friends')

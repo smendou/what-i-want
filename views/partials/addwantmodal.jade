@@ -7,7 +7,7 @@ if user
             i.fa.fa-close
           |New Want
         .modal-body
-          form.form.center-block(action='/#{user._id}/addWant', method='POST')
+          form.form.center-block(action='/addwant/#{user._id}', method='POST')
             input(type='hidden', name='_csrf', value=_csrf)
             .form-group
               label.col-sm-2.control-label(for='name') Name

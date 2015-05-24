@@ -30,7 +30,7 @@ var apiController = require('./controllers/api');
 var contactController = require('./controllers/contact');
 var friendsController = require('./controllers/friends');
 var wallOfWantsController = require('./controllers/wallofwants');
-var myWantsController = require('./controllers/mywants');
+var myWantsController = require('./controllers/wants');
 /**
  * API keys and Passport configuration.
  */
@@ -116,12 +116,13 @@ app.get('/account/unlink/:provider', passportConf.isAuthenticated, userControlle
 
 app.get('/friends', passportConf.isAuthenticated, friendsController.getFriends);
 app.post('/search', passportConf.isAuthenticated, friendsController.postSearch);
-app.get('/search/addfriend/:friendid', passportConf.isAuthenticated, friendsController.addFriend);
+app.get('/addfriend/:friendid', passportConf.isAuthenticated, friendsController.addFriend);
+app.get('/removefriend/:friendid', passportConf.isAuthenticated, friendsController.removeFriend);
 
 app.get('/wallofwants', passportConf.isAuthenticated, wallOfWantsController.index);
 
-app.get('/:user/mywants', passportConf.isAuthenticated, myWantsController.getMyWants);
-app.post('/:user/addWant', passportConf.isAuthenticated, myWantsController.postNewWant);
+app.get('/wants/:user', passportConf.isAuthenticated, myWantsController.getMyWants);
+app.post('/addwant/:user', passportConf.isAuthenticated, myWantsController.postNewWant);
 
 /**
  * API examples routes.

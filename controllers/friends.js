@@ -51,6 +51,12 @@ exports.addFriend = function(req, res, next) {
   });
 };
 
+exports.removeFriend = function(req, res, next) {
+  User.removeFriend(req.user._id, req.params.friendid, function(err, friendships){
+    res.redirect('../../friends');
+  });
+};
+
 var isEmpty = function(obj) {
     for(var prop in obj) {
         if(obj.hasOwnProperty(prop))
