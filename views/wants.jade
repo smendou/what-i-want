@@ -1,0 +1,26 @@
+extends layout
+
+block content
+	.row
+		for want in wants
+			.panel.panel-default
+				.panel-heading
+					a.pull-right(href="#") Details
+					h4 #{want.name}
+				.panel-body
+					img.img-circle.pull-right(src="//placehold.it/150x150")
+					a(href="#") Keyword: Bootstrap
+					.clearfix
+					hr
+					p If you're looking for help with Bootstrap code, the twitter-bootstrap tag at 
+						a(href="http://stackoverflow.com/questions/tagged/twitter-bootstrap") Stackoverflow
+					| is a good place to find answers.
+					hr
+					form
+						.input-group
+							.input-group-btn
+								button.btn.btn-default
+									i.fa.fa-thumbs-o-up
+								button.btn.btn-default
+									i.fa.fa-share
+							input.form-control(type="text",class="",placeholder="Add a comment..")
