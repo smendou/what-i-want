@@ -3,48 +3,51 @@ extends layout
 block content
 	.row
 		if usrs.pending
-			.panel.panel-default
-				.panel-heading
-					h4 Pending requests
-				.panel-body
-					ul.list-group
-						for usr in usrs.pending
-							li.list-group-item
-								.row
-									.col-md-1
-										if usr.friend.profile.picture
-											img.img-circle(src='#{usr.friend.profile.picture}')
-										else
-											img.img-circle(src='#{usr.friend.gravatar(70)}')
-									.col-md-11
-										| #{usr.friend.profile.name || usr.friend.email || usr.friend.id}
-										a.btn.btn-info(href='/search/addfriend/#{usr.friend.id}')
-											|Accept
+			.col-md-4
+				.panel.panel-default
+					.panel-heading
+						h4 Pending requests
+					.panel-body
+						ul.list-group
+							for usr in usrs.pending
+								li.list-group-item
+									.row
+										.col-md-1
+											if usr.friend.profile.picture
+												img.img-circle(src='#{usr.friend.profile.picture}')
+											else
+												img.img-circle(src='#{usr.friend.gravatar(70)}')
+										.col-md-11
+											| #{usr.friend.profile.name || usr.friend.email || usr.friend.id}
+											a.btn.btn-info(href='/search/addfriend/#{usr.friend.id}')
+												|Accept
 		if usrs.requested
-			.panel.panel-default
-				.panel-heading
-					h4 Requested friends
-				.panel-body
-					ul.list-group
-						for usr in usrs.requested
-							li.list-group-item
-								if usr.friend.profile.picture
-									img.img-circle(src='#{usr.friend.profile.picture}')
-								else
-									img.img-circle(src='#{usr.friend.gravatar(70)}')
-								| #{usr.friend.profile.name || usr.friend.email || usr.friend.id}
+			.col-md-4
+				.panel.panel-default
+					.panel-heading
+						h4 Requested friends
+					.panel-body
+						ul.list-group
+							for usr in usrs.requested
+								li.list-group-item
+									if usr.friend.profile.picture
+										img.img-circle(src='#{usr.friend.profile.picture}')
+									else
+										img.img-circle(src='#{usr.friend.gravatar(70)}')
+									| #{usr.friend.profile.name || usr.friend.email || usr.friend.id}
 		if usrs.accepted
-			.panel.panel-default
-				.panel-heading
-					h4 Friends
-				.panel-body
-					ul.list-group
-						for usr in usrs.accepted
-							li.list-group-item
-								if usr.friend.profile.picture
-									img.img-circle(src='#{usr.friend.profile.picture}')
-								else
-									img.img-circle(src='#{usr.friend.gravatar(70)}')
-								| #{usr.friend.profile.name || usr.friend.email || usr.friend.id}
-								a.btn.btn-default.pull-right(href='/search/addfriend/#{usr.friend.id}')
-									|Wants
+			.col-md-4
+				.panel.panel-default
+					.panel-heading
+						h4 Friends
+					.panel-body
+						ul.list-group
+							for usr in usrs.accepted
+								li.list-group-item
+									if usr.friend.profile.picture
+										img.img-circle(src='#{usr.friend.profile.picture}')
+									else
+										img.img-circle(src='#{usr.friend.gravatar(70)}')
+									| #{usr.friend.profile.name || usr.friend.email || usr.friend.id}
+									a.btn.btn-default.pull-right(href='/search/addfriend/#{usr.friend.id}')
+										|Wants
